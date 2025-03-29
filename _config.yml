@@ -1,14 +1,14 @@
 # Site settings
-title: Diseño de Sistemas
+title: Desarrollo de Software
 description: >- # this means to ignore newlines until "baseurl:"
   Conocé más sobre ésta temática
 baseurl: ""
-url: "https://dds-jv.github.io"
+url: "https://ddso-utn.github.io"
 
 # Tooltip settings
-tooltip-enabled: true
-tooltip-label: "Se solicita información sobre el paradero del estudiante Arshak Karhanyan"
-tooltip-link: "https://www.youtube.com/watch?v=N0tc_W8hiK0"
+tooltip-enabled: false
+tooltip-label: ""
+tooltip-link: ""
 
 # Build settings
 markdown: kramdown

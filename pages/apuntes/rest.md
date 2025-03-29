@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Interfaz de Usuario
+title: REST
 description: Apuntes, Enlaces y Papers
-permalink: /apuntes/ui/
+permalink: /apuntes/rest/
 ---
 
 _Sección en progreso_

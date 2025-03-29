@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Interfaz de Usuario
+title: Persistencia
 description: Apuntes, Enlaces y Papers
-permalink: /apuntes/ui/
+permalink: /apuntes/persistencia/
 ---
 
 _Sección en progreso_
