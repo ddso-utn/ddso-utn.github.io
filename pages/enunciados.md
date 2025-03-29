@@ -5,4 +5,4 @@ description: Enunciados para practicar lo aprendido
 permalink: /enunciados/
 ---
 
-- [Parte A]({{site.baseurl}}/enunciados/parte-a)
+_Sección en progreso_
