@@ -1,8 +1,8 @@
 ---
 layout: page
 title: Clase 1
-description: Viernes (Noche, 2024)
-permalink: /bitacoras/2024/viernes-n/clase-01/
+description: Jueves Mañana, 2025, Primer Cuatrimestre
+permalink: /bitacoras/2025-1c/jueves-manana/clase-01/
 ---
 
 # **¡Bienvenides!**
