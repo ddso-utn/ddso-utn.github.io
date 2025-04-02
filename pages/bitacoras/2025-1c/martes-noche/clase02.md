@@ -115,7 +115,10 @@ En esta clase hablamos de:
 - Metadata del proyecto:  
 - Dependencias/DevDependencies
 
-##### Ejemplo práctico con Express (súper básico)
+## Ejemplo práctico con Express
+- Creamos un "Hola Mundo" que se puede acceder desde el navegador
+
+--- 
 
 # Material
 
