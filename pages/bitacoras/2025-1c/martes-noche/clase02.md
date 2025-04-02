@@ -122,7 +122,7 @@ En esta clase hablamos de:
 
 # Material
 
-* [Presentación]([https://fabiofumarola.github.io/nosql/readingMaterial/Evans03.pdf](https://www.canva.com/design/DAGjWQ_nX6E/_vwL62qHc2FsEnwtYD7j-g/view?utm_content=DAGjWQ_nX6E&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf3334dcf89))
+* [Presentación](https://www.canva.com/design/DAGjWQ_nX6E/_vwL62qHc2FsEnwtYD7j-g/view?utm_content=DAGjWQ_nX6E&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf3334dcf89)
 * [Cualidades de diseño](https://docs.google.com/document/d/14HdvHvS33WqYb6Ak0BGa0IeCTbzeCRSDKs-1Ot-qLDw/edit?tab=t.0)
 * [Clean Architecture](https://github.com/GunterMueller/Books-3/blob/master/Clean%20Architecture%20A%20Craftsman%20Guide%20to%20Software%20Structure%20and%20Design.pdf)
 * [Biblioteca vs Framework](https://docs.google.com/document/d/1D_MCoh4J8kL1MAKNlbDgAMu2nYxri-81nZBYOPFWnO0/edit?tab=t.0#heading=h.6ab0fffv8tld)
