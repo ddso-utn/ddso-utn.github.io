@@ -6,13 +6,17 @@ permalink: /bitacoras/2025-1c/martes-noche/clase-02/
 ---
 
 # Resumen
+
 En esta clase hablamos de:
+
 
 ## Cualidades de diseño
 - Independientes de Tecnología  
 - Dependientes de Tecnología  
 - SOLID
+
 ## Git Avanzado
+
 ### Repaso
 - Repositorio  
 - Commit  
@@ -20,39 +24,50 @@ En esta clase hablamos de:
 - Push  
 - Merge  
 - Conflictos
+
 ### Branching
 - Puntero a un commit  
 - Usadas para desarrollos divergentes  
   - Ejemplo: Feature Branches  
   - Ejemplo: Branches por ambiente
+
 ### Merge Strategies
+
 #### Fast-Forward
 - Branch destino sin cambios  
 - Me pone los commits después  
 - Sin Merge Commit
+
 #### Recursive
 - Branch destino con cambios  
 - Me intercala los commits  
 - Tiene Merge commit  
 - Conflictos
+
 ##### Sin conflictos
 - Merge commit vacío
+
 ##### Con conflictos
 - Me pide resolver  
 - Hace Merge commit con la resolución
+
 ### Alternativas al Merge
+
 #### Rebase & Merge
 - Coloca los commits de la branch fuente atrás de los de la branch destino  
 - Cambia el ancestro común  
 - Aplica sucesivamente cada commit y detiene en conflictos  
 - Resultado: fast forward más prolijo
+
 #### Squash & Merge
 - Combina todos los cambios en un solo commit  
 - Historial más conciso pero menos detallado  
 - A lo sumo un solo conflicto
+
 #### Cherry-pick
 - Aplica de a un commit sobre una branch  
 - Combinado con squash puede equivaler a un rebase más conciso
+
 ### Pull Requests (o request-pull)
 - Herramienta de QA (mejora de proceso)  
 - Revisión de pares  
@@ -60,24 +75,34 @@ En esta clase hablamos de:
 - Abre debates  
 - Permite supervisar  
 - Varios ojos ven más que uno
+
+---
+
 ## Plataformas
+
 ### Javascript
 - Lenguajes compilados vs Interpretados:
 - Node Interpreter  
 - Concepto de VM/Runtime
+
 ### Armando mi primera app
+
 #### Server Node pelado
 - Es de muy bajo nivel
 - Mejor usar un framework
+
 ##### Biblioteca vs Framework
+
 ###### Biblioteca
 - La llamo yo  
 - Menos decisiones pre-tomadas
+
 ###### Framework
 - Me llama a mí  
 - Da estructura  
 - Metáfora del esqueleto/carne  
 - Muchas decisiones pre-tomadas
+
 #### Dependencias
 - Manejadores:
   - Maven  
@@ -85,12 +110,13 @@ En esta clase hablamos de:
   - Gradle  
   - Gemfiles
   - Etc.
+
 ##### NPM
 - Metadata del proyecto:  
 - Dependencias/DevDependencies
+
 ##### Ejemplo práctico con Express (súper básico)
 
---- 
 # Material
 
 * [Presentación](https://fabiofumarola.github.io/nosql/readingMaterial/Evans03.pdf)
