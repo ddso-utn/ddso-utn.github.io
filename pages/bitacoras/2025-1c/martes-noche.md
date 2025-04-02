@@ -12,4 +12,4 @@ frame: "https://docs.google.com/spreadsheets/d/e/2PACX-1vST7x2Qe6HDVc8MnIx7uS2MU
 Cada enlace te lleva a lo visto y lo que hay que ver antes de la siguiente clase.
 
 - [Clase 1: Qué es Desarrollo de software]({{site.baseurl}}/bitacoras/2025-1c/martes-noche/clase-01)
-- Clase 2: Conceptos Fundacionales
+- [Clase 2: Conceptos Fundacionales]({{site.baseurl}}/bitacoras/2025-1c/martes-noche/clase-02)
