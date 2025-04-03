@@ -7,6 +7,7 @@ permalink: /bitacoras/2025-1c/jueves-manana/clase-03/
 
 # Resumen
 
+ * Proceso de desarrollo. Etapas
  * Repaso: Manejo de Dependencias (npm) y flujos de trabajo con git
  * Cualidades de diseño: overview. SOLID (mención).
  * Backend: Capa de dominio/Aplicación."
@@ -14,6 +15,7 @@ permalink: /bitacoras/2025-1c/jueves-manana/clase-03/
  * Modelo OO. Services. Controllers. Repositories
  * Manejo de errores
  * Testing. Introducción. Conceptos generales. Estrategias. BDD. TDD.
+ * Frameworks web mvc. Livianos y pesados. Ejemplos. Cómo se estructura el servidor (backend).
 
 # Material
 

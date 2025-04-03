@@ -41,7 +41,7 @@ En este encuentro hablamos de:
 
 # Material
 
-_Sección en progreso_
+ * [Introducción a Arquitectura](https://docs.google.com/document/d/1XaKMrWPA0jntDK29gtEDRw-CoQgWXfHOmdbmihg4MpE/edit?tab=t.0#heading=h.z9jwy1eurzt9)
 
 # Tarea
 
