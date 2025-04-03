@@ -7,10 +7,28 @@ permalink: /bitacoras/2025-1c/jueves-manana/clase-03/
 
 # Resumen
 
- * Proceso de desarrollo. Etapas
  * Repaso: Manejo de Dependencias (npm) y flujos de trabajo con git
+
+
+### Proceso de desarrollo
+
+
+ * Desarrollo iterativo-incremental
+  * Concepto base y aplicación general
+ * Etapas del proceso y herramientas
+  * Concepto de Requerimiento
+    * User Story / Ticket
+    * Bug vs Feature
+    * Acceptance Criteria
+    * Issue Trackers
+  * Desarrollo (codificación)
+    * Versionado
+
+
+### Desarrollo Backend
+
  * Cualidades de diseño: overview. SOLID (mención).
- * Backend: Capa de dominio/Aplicación."
+ * Backend: Capa de dominio/Aplicación.
  * Promises: Mención
  * Modelo OO. Services. Controllers. Repositories
  * Manejo de errores

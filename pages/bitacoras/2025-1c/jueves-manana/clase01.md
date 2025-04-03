@@ -38,6 +38,7 @@ En este encuentro hablamos de:
      * Bases de datos
      * Redes
 
+![](https://www.plantuml.com/plantuml/png/IqmkoIzISCx9JCqhIULIuChBJqbL24ujAijC0OfpfIIM92Ob5gSgE049brINn9ByOYukg785NJkuKYuO0oY8eXW0)
 
 # Material
 
