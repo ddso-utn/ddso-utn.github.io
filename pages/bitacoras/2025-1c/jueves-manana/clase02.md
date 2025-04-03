@@ -28,6 +28,7 @@ En esta clase hablamos de lo siguiente:
  * [Tutorial HTTP](https://github.com/flbulgarelli/http-tutorial)
  * La [presentación de sábado sobre JS](https://docs.google.com/presentation/d/1DSlTheHfB-q5oMV98c9DQGYWgjIG6RV38k3JpKeDv7E/edit?slide=id.p1#slide=id.p1)
  * Herramientas de diagramación: [Mermaid](https://mermaid.js.org/) y [PlantUML](https://www.plantuml.com/)
+ * [Biblioteca vs Framework](https://docs.google.com/document/d/1D_MCoh4J8kL1MAKNlbDgAMu2nYxri-81nZBYOPFWnO0/edit?tab=t.0#heading=h.6ab0fffv8tld)
 
 # Tarea
 
