@@ -9,7 +9,6 @@ permalink: /bitacoras/2025-1c/jueves-manana/clase-03/
 
  * Repaso: Manejo de Dependencias (npm) y flujos de trabajo con git
 
-
 ### Proceso de desarrollo
 
 
@@ -30,15 +29,16 @@ permalink: /bitacoras/2025-1c/jueves-manana/clase-03/
  * (¿el protocolo?) REST. REST como un protocolo sobre otro, REST como un conjunto de buenas prácticas y convenciones. Paréntesis: Redes e Internet.
  * Cualidades de diseño: overview. SOLID (mención).
  * Backend: Capa de dominio/Aplicación.
- * Promises: Mención
  * Modelo OO. Services. Controllers. Repositories
+ * Promises: Mención
  * Manejo de errores
  * Testing. Introducción. Conceptos generales. Estrategias. BDD. TDD.
  * Frameworks web mvc. Livianos y pesados. Ejemplos. Cómo se estructura el servidor (backend).
 
 # Material
 
-_Sección en progreso_
+ * [Cualidades de diseño](https://docs.google.com/document/d/14HdvHvS33WqYb6Ak0BGa0IeCTbzeCRSDKs-1Ot-qLDw/edit?tab=t.0)
+ * [Formalización de Convenciones REST básicas](https://github.com/flbulgarelli/http-tutorial/tree/master/tutorial/es#14-recursos)
 
 # Tarea
 

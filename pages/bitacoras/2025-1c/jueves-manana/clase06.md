@@ -7,7 +7,10 @@ permalink: /bitacoras/2025-1c/jueves-manana/clase-06/
 
 # Resumen
 
-_Sección en progreso_
+ * Patrones de UI. Componentes. Conceptos
+ * Client side vs Server Side.
+ * MVC. MVVM. Flux.
+ * Reactividad. Variantes. Generalizacion.
 
 # Material
 

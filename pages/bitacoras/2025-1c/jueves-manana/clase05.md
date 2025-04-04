@@ -7,7 +7,10 @@ permalink: /bitacoras/2025-1c/jueves-manana/clase-05/
 
 # Resumen
 
-_Sección en progreso_
+ * Intro a Frontend. Concepto de UI. Tipos. Ejemplos
+ * Vistas estáticas. Concepto de HTML. Concepto de CSS
+ * Interactividad. Eventos. Callbacks
+ * DOM
 
 # Material
 
