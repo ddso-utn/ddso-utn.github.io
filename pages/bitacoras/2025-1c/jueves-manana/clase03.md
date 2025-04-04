@@ -27,6 +27,7 @@ permalink: /bitacoras/2025-1c/jueves-manana/clase-03/
 
 ### Desarrollo Backend
 
+ * (¿el protocolo?) REST. REST como un protocolo sobre otro, REST como un conjunto de buenas prácticas y convenciones. Paréntesis: Redes e Internet.
  * Cualidades de diseño: overview. SOLID (mención).
  * Backend: Capa de dominio/Aplicación.
  * Promises: Mención
