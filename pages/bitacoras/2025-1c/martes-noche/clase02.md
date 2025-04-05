@@ -5,6 +5,13 @@ description: Martes Noche, 2025, Primer Cuatrimestre
 permalink: /bitacoras/2025-1c/martes-noche/clase-02/
 ---
 
+# Video
+
+[Link al video de la clase](https://utn.zoom.us/rec/share/E1uzr89gNPvnnpr7CXc8cSS777Pm08_abRhQp-UMIHwhBBSch6fBOK1oD_kyPRFT.NiTa3vcX4AdLa93_)
+
+Código de acceso: J73aV#s8
+
+
 # Resumen
 
 En esta clase hablamos de:
