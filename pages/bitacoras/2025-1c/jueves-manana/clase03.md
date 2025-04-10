@@ -45,6 +45,13 @@ En el ámbito particular del desarrollo web podemos encontrar dos prominentes (q
     * Servicios. Controladores. Repositorios. "Modelos" y DTOs (objetos anémicos)
  * Modelo OO: se lleva bien con el modelo de _concerns_ y/o MVC y derivados.
 
+### Cliente liviano y pesado
+
+  * Pesado: genera (mayormente y en su forma más naíf) genera estructuras aptas para el consumo programático (ejemplo, API REST en JSON/XML) y el cliente lo transforma en HTML.
+  * Liviano: el servidor produce HTML mas o menos definitivo, el cliente hace pocas transformaciones o ninguna.
+
+En el mundo `node`, `express` nos sirve como framework para implementar servidores para ambos estilos arquitectónicos. Frameworks como React, Vue o Angular nos servirán para implementar la lógica de presentación en el cliente en el contexto de un cliente pesado.
+
 ### Errores
 
 Como manejarlos y dónde.
@@ -68,5 +75,5 @@ Si no lo hiciste ya:
 
 Además:
 
- * [Leer la nueva versión del tutorial de express](https://docs.google.com/document/d/1Nn6GMzm7bD9tvVi_wGjLbt8X4KEk5IChzXdPpEFK4vY/edit?tab=t.0#heading=h.halhyllz00mo) (la publicaremos pronto)
+ * [Leer la nueva versión del tutorial de express](https://docs.google.com/document/d/1Nn6GMzm7bD9tvVi_wGjLbt8X4KEk5IChzXdPpEFK4vY/edit?tab=t.0#heading=h.halhyllz00mo) (la publicaremos pronto, la actual sólo cubre express para generar vistas HTML, pero también lo usaremos para APIs)
  * ¡No te olvides de asistir a la próxima clase de los sábados!
