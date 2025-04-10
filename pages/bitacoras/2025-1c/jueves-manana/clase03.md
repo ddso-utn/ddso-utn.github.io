@@ -7,6 +7,20 @@ permalink: /bitacoras/2025-1c/jueves-manana/clase-03/
 
 # Resumen
 
+## Repaso de la clase pasada
+
+Repasamos lo visto la clase pasada y dejamos materiales complementarios:
+
+ * Internet y Redes: https://howdns.works/es/
+ * Herramientas: https://developer.mozilla.org/es/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs.
+    * ⚠ Ojo, hoy en día otra herramienta común para construir interfaces Web y APIs es `next.js`, pero en la materia trabajaremos con `express` y con (sólo) `react`.
+ * Docker: es una herramienta opcional.
+ * Concurrencia en node.js: el elemento central de planificación en las aplicaciones node es el _event loop_, que permite la programación concurrente aún con un sólo proceso y un sólo hilo (si utilizaste `poll`, `epoll` o `select` en Sistemas Operativos quizás no te resulte una idea tan novedosa). Podés encontrar más información sobre su funcionamiento en el sitio de la [electiva Arquitecturas Concurrentes](https://arquitecturas-concurrentes.github.io/iasc-book/event_loop) y [en MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Execution_model)
+  * Axios: aún es pronto para ponerse a trabajar con esta herramienta en profundidad (primero nos concentraremos en exponer APIs HTTP/REST antes que en consumirlas), pero acá dejamos [su documentación en español](https://axios-http.com/es/docs/intro)
+  * Express vs node: node es un _entorno de ejecución_, que además de un intérprete y un gestor de paquete cuenta con bibliotecas de bajo nivel. Si bien node permite nativamente programar aplicaciones TCP/HTTP, para programar aplicaciones HTTP/REST es más conveniente utilizar un _framework_ de alto nivel que nos simplifique varias tareas y nos provea de un marco de trabajo para definir rutas.
+  * JSON: es un formato basado en texto plano que sirve para representar datos estructurados. MDN nos da [una breve introducción](https://developer.mozilla.org/es/docs/Learn_web_development/Core/Scripting/JSON). A diferencia de otros lenguajes de metadatos similares como XML y YAML, JSON se inspira en la sintaxis de objetos de JavaScript, que sigue la estructura `{ "clave": "valor" }`.
+ * [CURL](https://curl.se/): es un cliente HTTP de línea de comandos, útil para usarlo como parte de scripts. Sin embargo para desarrollar y probar APIs te puede resultar útil [Postman](https://www.postman.com/downloads/).
+
 ## Proceso de desarrollo
 
  * Desarrollo iterativo-incremental: este concepto ya lo deberían tener de materias anteriores. Si no, [acá dejamos una breve introducción y comparación con otros enfoques](https://docs.google.com/document/d/11PQO8NPSOV4SW0ZwtFsh4RCtWubuEBV6E5qPicqJNKs/edit?tab=t.0#heading=h.bva2amx4ntdf). En esta materia, siempre asumiremos que trabajamos bajo ese enfoque.
