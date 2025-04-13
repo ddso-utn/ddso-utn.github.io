@@ -51,13 +51,13 @@ Cada una ya tiene sus propias ventajas y desventajas, detractores y defensores, 
 
 En el ámbito particular del desarrollo web podemos encontrar dos prominentes (que a su vez de han influenciado históricamente).
 
- * MVC Web del lado del servidor: inspirado en MVC de los 80, pero buscando resolver las limitaciones del modelo cliente servidor. Separación de modelo y vista.
- * MVC (y sus derivados MVP, MVVM) Web del lado del cliente.
- * Modelo de backend en basado en _concerns_ (incumbencias):
-    * Presentación, Dominio, Persistencia.
- * Model de backend basado en capas:
-    * Servicios. Controladores. Repositorios. "Modelos" y DTOs (objetos anémicos)
- * Modelo OO: se lleva bien con el modelo de _concerns_ y/o MVC y derivados.
+- MVC Web del lado del servidor: Inspirado en el patrón _Model-View-Controller_ de los años 80, adaptado a aplicaciones web. La lógica del servidor está dividida en controladores (que manejan la interacción del usuario), modelos (que representan los datos y lógica de negocio), y vistas (que generan las respuestas HTML o datos). Ejemplo clásico: aplicaciones con Ruby on Rails o Django.
+- MVC (y derivados MVP, MVVM) Web del lado del cliente: cuando se utiliza un cliente pesado, el patrón MVC puede migrar al navegador. Frameworks como React (aunque no implementa MVC estrictamente), Angular o Vue ofrecen formas de organizar el código del cliente con separación entre lógica, datos y presentación.
+- Modelo basado en _concerns_ (incumbencias): organiza el backend en capas como Presentación, Dominio, y Persistencia. Esta separación permite un mayor desacoplamiento y escalabilidad, alineándose muchas veces con prácticas de diseño orientadas a dominio (como DDD).
+- Modelo en capas: típicamente incluye capas como Controladores, Servicios, Repositorios, Modelos y DTOs. Esta estructura es muy común en aplicaciones empresariales, especialmente con frameworks como Spring en Java, o Nest.js en Node. Las capas permiten aislar la lógica de presentación, negocio y acceso a datos.
+- Modelo orientado a objetos (OO): no es un patrón arquitectónico per se, pero se integra bien con los anteriores. Apunta a modelar el dominio del problema usando objetos que encapsulan datos y comportamientos. En los mundos de MVC o la separación en base a _concerns_,  el modelo puede estar organizando en torno a un dominio de objetos sin otra estructura particular.
+
+Ninguna arquitectura es “la mejor” en forma absoluta. Cada una tiene ventajas y limitaciones, y su elección dependerá del tipo de aplicación, el equipo, las tecnologías disponibles y los requerimientos del negocio.
 
 ### Cliente liviano y pesado
 
