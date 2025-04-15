@@ -54,10 +54,12 @@ En el ámbito particular del desarrollo web podemos encontrar dos prominentes (q
 - MVC Web del lado del servidor: Inspirado en el patrón _Model-View-Controller_ de los años 80, adaptado a aplicaciones web. La lógica del servidor está dividida en controladores (que manejan la interacción del usuario), modelos (que representan los datos y lógica de negocio), y vistas (que generan las respuestas HTML o datos). Ejemplo clásico: aplicaciones con Ruby on Rails o Django.
 - MVC (y derivados MVP, MVVM) Web del lado del cliente: cuando se utiliza un cliente pesado, el patrón MVC puede migrar al navegador. Frameworks como React (aunque no implementa MVC estrictamente), Angular o Vue ofrecen formas de organizar el código del cliente con separación entre lógica, datos y presentación.
 - Modelo basado en _concerns_ (incumbencias): organiza el backend en capas como Presentación, Dominio, y Persistencia. Esta separación permite un mayor desacoplamiento y escalabilidad, alineándose muchas veces con prácticas de diseño orientadas a dominio (como DDD).
-- Modelo en capas: típicamente incluye capas como Controladores, Servicios, Repositorios, Modelos y DTOs. Esta estructura es muy común en aplicaciones empresariales, especialmente con frameworks como Spring en Java, o Nest.js en Node. Las capas permiten aislar la lógica de presentación, negocio y acceso a datos.
-- Modelo orientado a objetos (OO): no es un patrón arquitectónico per se, pero se integra bien con los anteriores. Apunta a modelar el dominio del problema usando objetos que encapsulan datos y comportamientos. En los mundos de MVC o la separación en base a _concerns_,  el modelo puede estar organizando en torno a un dominio de objetos sin otra estructura particular.
+- Modelo en capas: típicamente incluye capas como Controladores, Servicios, Repositorios y Modelos, y utiliza DTOs para la transferencia de información. Leer el  capítulo 4 del Libro Domain Driven Design de Eric Evans (ver materiales).
+- Modelo orientado a objetos (OO): no es un patrón arquitectónico per se, pero se integra bien con los anteriores. Apunta a modelar el dominio a partir de un conjunto de objetos que colaboran sin una estructura a-priori, sino guiada por los requerimientos. En los mundos de MVC o la separación en base a _concerns_,  el modelo puede estar organizando en torno a un dominio de objetos sin otra estructura particular.
 
 Ninguna arquitectura es “la mejor” en forma absoluta. Cada una tiene ventajas y limitaciones, y su elección dependerá del tipo de aplicación, el equipo, las tecnologías disponibles y los requerimientos del negocio.
+
+
 
 ### Cliente liviano y pesado
 
@@ -77,6 +79,8 @@ Como manejarlos y dónde.
  * [Cualidades de diseño](https://docs.google.com/document/d/14HdvHvS33WqYb6Ak0BGa0IeCTbzeCRSDKs-1Ot-qLDw/edit?tab=t.0). Apunte tomado prestado de DDSi, donde se profundiza el concepto, pero que nos provee un vocabulario útil para la materia.
  * [Presentación cortesía de los Martes noche](https://www.canva.com/design/DAGjWQ_nX6E/_vwL62qHc2FsEnwtYD7j-g/view?utm_content=DAGjWQ_nX6E&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf3334dcf89#5), con una breve mención a los principios SOLID, que en general podemos pensar como una reversión de las cualidades de diseño en el contexto de OOP.
  * [Formalización de Convenciones REST básicas](https://github.com/flbulgarelli/http-tutorial/tree/master/tutorial/es#14-recursos)
+ * _Domain Driven Design (Eric Evans, 2003): Capítulo 4. Isolating the Domain_
+
 
 # Tarea
 
@@ -89,5 +93,5 @@ Si no lo hiciste ya:
 
 Además:
 
- * [Leer la nueva versión del tutorial de express](https://docs.google.com/document/d/1Nn6GMzm7bD9tvVi_wGjLbt8X4KEk5IChzXdPpEFK4vY/edit?tab=t.0#heading=h.halhyllz00mo) (la publicaremos pronto, la actual sólo cubre express para generar vistas HTML, pero también lo usaremos para APIs)
+ * [Leer la nueva versión del tutorial de express](https://docs.google.com/document/d/1Nn6GMzm7bD9tvVi_wGjLbt8X4KEk5IChzXdPpEFK4vY/edit?tab=t.0#heading=h.halhyllz00mo) y ver el código asociado.
  * ¡No te olvides de asistir a la próxima clase de los sábados!
