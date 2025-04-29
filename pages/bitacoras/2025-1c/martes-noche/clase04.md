@@ -22,5 +22,5 @@ En esta clase hicimos práctica de Backend REST con el ejercicio de Kommanda
 
 # Material
 
-* [Enunciad Kommanda](https://docs.google.com/document/d/1QHOLDwn7LaETVxSIkOWK5nGT9xrBjatjZoiKafDebsw/edit?tab=t.0#heading=h.btqp28xuwru4)
+* [Enunciado Kommanda](https://docs.google.com/document/d/1QHOLDwn7LaETVxSIkOWK5nGT9xrBjatjZoiKafDebsw/edit?tab=t.0#heading=h.btqp28xuwru4)
 * [Repo Con Resolución](https://github.com/ddso-utn/kommanda/tree/clase-2-sin-resolver)
