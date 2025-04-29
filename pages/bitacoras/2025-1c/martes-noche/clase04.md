@@ -14,7 +14,7 @@ En esta clase hicimos práctica de Backend REST con el ejercicio de Kommanda
   * Desarrollo de una capa de dominio simple
   * Lógica de procesamiento de Request y Response
   * Manejo de errores básico
-  * Conceto de Repository
+  * Concepto de Repository
   * Intro a concepto de Controller
  
     
