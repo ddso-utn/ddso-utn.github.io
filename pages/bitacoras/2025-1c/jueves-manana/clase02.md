@@ -5,6 +5,15 @@ description: Jueves Mañana, 2025, Primer Cuatrimestre
 permalink: /bitacoras/2025-1c/jueves-manana/clase-02/
 ---
 
+# Temario
+
+ * Repaso JS.
+ * Introducción a herramientas
+ * Proceso de desarrollo. Etapas
+ * Intro a backend con API REST. Concepto de framework y biblioteca
+ * Internet. Web. HTTP. REST
+
+
 # Resumen
 
 En esta clase hablamos de lo siguiente:

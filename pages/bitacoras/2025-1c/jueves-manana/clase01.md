@@ -20,6 +20,8 @@ Si bien está pensado para que puedas seguir lo visto estés donde estés, es im
  * Débora Fortini
  * Gastón Prieto
 
+# Temario
+
 # Resumen
 
 En este encuentro hablamos de:

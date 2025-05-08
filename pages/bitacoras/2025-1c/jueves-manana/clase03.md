@@ -5,6 +5,18 @@ description: Jueves Mañana, 2025, Primer Cuatrimestre
 permalink: /bitacoras/2025-1c/jueves-manana/clase-03/
 ---
 
+# Temario
+
+ * REST
+ * Paréntesis: Redes e Internet.
+ * Cualidades de diseño: overview. SOLID (mención).
+ * Backend: Capa de dominio/Aplicación.
+ * Modelo OO. Services. Controllers. Repositories
+ * Promises: Mención
+ * Manejo de errores
+ * Testing. Introducción. Conceptos generales. Estrategias. BDD. TDD.
+ * Frameworks web mvc. Livianos y pesados. Ejemplos. Cómo se estructura el servidor (backend).
+
 # Resumen
 
 ## Repaso de la clase pasada
