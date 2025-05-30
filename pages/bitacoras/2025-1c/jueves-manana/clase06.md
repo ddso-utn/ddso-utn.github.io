@@ -35,7 +35,7 @@ permalink: /bitacoras/2025-1c/jueves-manana/clase-06/
   * Originado en FB
   * Cambio de paradigam de HTML (componentes, manipulacion directa DOM, etc, separacion HTML, JS, CSS)
   * Eventos
-  * JSX, componentes, props y estado. Diferencia entre JS y JSX. 
+  * JSX, componentes, props y estado. Diferencia entre JS y JSX.
 
 ## Ejemplo: Conversor de unidades
 
@@ -93,11 +93,7 @@ function Conversor() {
 # Material
 
 
+* [Presentación](https://docs.google.com/presentation/d/1yd7Ka-z70T0T4OTkLveB7p6agyDaEyyiZOHBQVlhtuM/edit?slide=id.p#slide=id.p)
 * https://es.react.dev/
 * https://nextjs.org/
 * https://reactstrap.github.io
-
-
-# Tarea
-
-_Sección en progreso_
