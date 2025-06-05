@@ -97,3 +97,4 @@ function Conversor() {
 * https://es.react.dev/
 * https://nextjs.org/
 * https://reactstrap.github.io
+* [Presentación del taller de los sábados](https://docs.google.com/presentation/d/1s27zmMTMqj4xtfOH8cdsq3t0VBU5xIhzc5YdHN_fXEw/edit?slide=id.p1#slide=id.p1)
