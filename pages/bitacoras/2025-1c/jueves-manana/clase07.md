@@ -31,4 +31,10 @@ Estudiamos como cada componente puede verse como una función que va de (state+p
 
 # Tarea
 
-_Sección en progreso_
+Desafíos:
+
+0. Extender la notificación para que también notifique la cantidad de clicks con las que el ganador gana.
+1. Hasta ahora venimos llevando registro de la cantidad de clicks.
+   Nos gustaría ahora llevar registro de donde se hizo el click, es decir, guardar también la lista de donde se hizo click
+2. Super desafio: incorporar un componente nuevo, que se muestre al lado del comparador,
+   que por cada click que se produce, pinte un puntito en el área correspondiente
