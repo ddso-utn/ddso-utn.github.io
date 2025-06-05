@@ -94,6 +94,7 @@ function Conversor() {
 
 
 * [Presentación](https://docs.google.com/presentation/d/1yd7Ka-z70T0T4OTkLveB7p6agyDaEyyiZOHBQVlhtuM/edit?slide=id.p#slide=id.p)
+* [Conversor de unidades](https://github.com/ddso-utn/conversor-milllas)
 * https://es.react.dev/
 * https://nextjs.org/
 * https://reactstrap.github.io
