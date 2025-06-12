@@ -17,4 +17,4 @@ Cada enlace te lleva a lo visto y lo que hay que ver antes de la siguiente clase
 - [Clase 4: Persistencia y Modelo documental]({{site.baseurl}}/bitacoras/2025-1c/jueves-manana/clase-04)
 - [Clase 5: Introducción al Desarrollo Frontend]({{site.baseurl}}/bitacoras/2025-1c/jueves-manana/clase-05)
 - [Clase 6: Patrones de Arquitectura de UI]({{site.baseurl}}/bitacoras/2025-1c/jueves-manana/clase-06)
-- [Clase 7: Manejo de estado]({{site.baseurl}}/bitacoras/2025-1c/jueves-manana/clase-06)
+- [Clase 7: Manejo de estado]({{site.baseurl}}/bitacoras/2025-1c/jueves-manana/clase-07)
