@@ -7,13 +7,15 @@ permalink: /bitacoras/2025-1c/jueves-manana/clase-09/
 
 # Resumen
 
- * Frontend Testing. E2E. Herramientas
- * User experience. Concepto.
- * Reglas prácticas de UX. Accesibilidad
+ * Despliegue. Conceptos de infraestructura
+ * CI/CD. Contenedores. Dockerización
+ * Proceso de Release
+
 
 # Material
 
-* [Video sobre UX](https://www.youtube.com/watch?v=78l4oTU6AfA)
+* [Presentación Docker](....)
+* [Apunte Docker](...)
 
 # Tarea
 

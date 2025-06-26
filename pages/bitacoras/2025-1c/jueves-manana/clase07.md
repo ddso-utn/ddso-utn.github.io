@@ -27,7 +27,8 @@ Estudiamos como cada componente puede verse como una función que va de (state+p
 
  * [Guía sobre hooks](https://hooks-guide.netlify.app/)
  * [Presentación del taller de los sábados](https://docs.google.com/presentation/d/1Cq-ElvtfndlUxnMjJNhVjPr3uApaSCMmslSTlkGhEBI/edit?slide=id.p1#slide=id.p1)
- * https://github.com/ddso-utn/contador-clicks
+ * [Contador de Clicks](https://github.com/ddso-utn/contador-clicks)
+    * [Versión en clase](https://github.com/ddso-utn/contador-clicks/tree/en-clase)
 
 # Tarea
 
