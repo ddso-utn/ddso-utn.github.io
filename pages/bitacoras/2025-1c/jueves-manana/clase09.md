@@ -40,19 +40,26 @@ Mencionamos sus ventajas y desventajas: por un lado son herramientas que permite
 
 ### Dudas
 
+> Nota: Todos estos temas se profundizarán en DDSI.
+
 Respondemos dudas. En particular, focalizamos en cuestiones vinculadas a login y manejo de sesión. Nos resulta útil repasar o presentar algunas cuestiones:
 
   1. Manejo de sesión: demostrar que un pedido HTTP fue realizado por la misma entidad que un pedido anterior. Esto puede sonar trivial, pero dado que el protocolo HTTP es stateless, no lo es. Por eso necesitamos de cabeceras que nos permitan el manejo de sesión: `Cookie` y `Set-Cookie`. La primera es una cabecera que se envía en pedidos HTTP, en la que el cliente envía un código (asociado a un cierto dominio) como prueba de que está continuando un pedido anterior y que permite dar continuidad a la sesión. La segunda es enviada por el servidor cada vez que necesite asignar o reemplazar la cookie existen para ese dominio. Luego, el cliente se encargará de enviar esta cookie como parte del siguiente pedido HTTP.
   2. Registración (_sign up_) e Inicio de sesión (_log in_): dos procesos típicos de sistemas destinados a usuaries finales en los que se alguna forma se asocia información a una persona (física o jurídica).
-  3. Autenticación y Autorización: dos procesos de cualquier sistema en que haya operaciones o recursos protegidos. El primero trata de demostrar que un actor (una persona o incluso otro sistema) es quien dice ser, utilizando algún mecanismo de validación de identidad (como por ejemplo, una contraseña). El segundo trata de evaluar si ese actor cuenta con los permisos necesarios para hacer lo que intenta. Esto puede ser hecho mediante un control de acceso basado en roles (RBAC), que puede o no ser jerarquíco.
+  3. Autenticación y Autorización: dos procesos de cualquier sistema en que haya operaciones o recursos protegidos. El primero trata de demostrar que un actor (una persona o incluso otro sistema) es quien dice ser, utilizando algún mecanismo de validación de identidad (como por ejemplo, una contraseña). El segundo trata de evaluar si ese actor cuenta con los permisos necesarios para hacer lo que intenta. Esto puede ser hecho mediante un control de acceso basado en roles (RBAC), que puede o no ser jerárquico.
   4. Autenticación básica HTTP (_Basic-Auth_).
-  5. Token _al portador_ (_Bearer_). Un mecanismo alternativo tanto de manejo de sesión como de autenticación y autorización. Pueden ser enviados dentro de la cabecera `Cookie` y `Set-Cookie` (con lo que se vuelven a muchos fines prácticos y a ojos del cliente indistinguibles de una cookie normal) o mediante la cabecera `Authorization`. Es importante tener en cuenta que de esta última forma la gestión del envío de estos tokens pasa a ser manual (a diferencia de lo que ocurre con las cookies, que por defecto son enviadas por el navegador en cada pedido HTTP al dominio correspondiente).
+  5. Token _al portador_ (_Bearer_). Un mecanismo alternativo tanto de manejo de sesión como de autenticación y autorización. Pueden ser enviados dentro de la cabecera `Cookie` y `Set-Cookie` (con lo que se vuelven a muchos fines prácticos y a ojos del cliente indistinguibles de una cookie normal) o mediante la cabecera `Authorization`. Es importante tener en cuenta que de esta última forma la gestión del envío de estos tokens pasa a ser manual (a diferencia de lo que ocurre con las cookies, que por defecto son enviadas por el navegador en cada pedido HTTP al dominio correspondiente). Hay dos casos ampliamente difundidos de uso de token al portador:
+
+      * como una forma de manejo de sesión en aplicaciones para usuaries como finales. En este caso, la autenticación se realiza mediante los mecanismos usuales, pero en este caso la cookie contiene al token.
+      * como una forma de manejo de autenticación y autorización en el contexto de APIs HTTP.
 
 
 # Material
 
 * [Video sobre UX](https://www.youtube.com/watch?v=78l4oTU6AfA)
-* [JWT](https://jwt.io/)
+* [JWT](https://jwt.io/). Uno de los tipos de tokens al portador más extendidos, que definen partes tanto opacas como transparantes para clientes y/o servidores, además de un mecanismo automático de expiración de tokens.
+* [OAuth](https://oauth.net/2/): un protocolo ampliamente difundido de autorización, que permite la autorización delegada. En este, mientras que un nodo (o servicio) es el responsable de validar la identidad del actor (autenticación), otros nodos o servicios del sistema (o incluso sistemas externos) pueden consumir datos como información de le usuarie y ser empleado para validar permisos (autorización).
+* [Keycloack](https://www.keycloak.org/) una solución de código abierto de autenticación
 
 # Tarea
 
