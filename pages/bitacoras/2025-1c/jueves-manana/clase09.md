@@ -17,11 +17,19 @@ permalink: /bitacoras/2025-1c/jueves-manana/clase-09/
 
 En esta clase conversamos sobre cobre conceptos de UX y accesibilidad. En particular:
 
-  1. Qué es UX y en qué se diferencia del concepto de diseño de UI y Usabilidad. Mencionamos conceptos tales como espaciado, tipografías, colores, tamaños, proximidad, orden de lectura, diseño mobile first, _analytics_, _calls to action_, tiempos de espera y cuestiones de contraste. Todos estos contenidos serán desarrollados en profundidad en el video de UX.
-  2. En qué se diferencia del concepto de accesibilidad y por qué es tan importante (ser accesible no es una opción, **es una obligación***). En particular:
+  1. Qué es UX o experiencia de usuarie. Hablamos de la idea de aportar valor a le usuarie, o mas bien, a la empresa u organización dueña del sistema / producto y de cómo la UX busca llevar a la persona a realizar las acciones más importantes / de más valor.
+  2. Cómo se diferencia del diseño de UI y Usabilidad (poder utilizar / descubrir la funciones del sistema con mínima ayuda, tanto en un primer uso como en usos subsecuentes). Mencionamos que la usabilidad está vinculada con saber donde están las cosas y en que el sistema presente reacciones esperables,es decir que presente un bajo nivel de sorpresa. Además, la vinculamos con conceptos tales como espaciado, tipografías, colores, tamaños, proximidad, orden de lectura, diseño mobile first, _analytics_, _calls to action_, tiempos de espera y cuestiones de contraste. Todos estos contenidos serán desarrollados en profundidad en el video de UX.
+  3. En qué se diferencia del concepto de accesibilidad y por qué es tan importante (ser accesible no es una opción, **es una obligación***). En particular:
     * Presentamos los atributos ARIA, los atributos `alt` y las etiquetas semánticas.
     * Hablamos de lectores de pantalla
     * Hablamos sobre validadores de accesibilidad
+
+#### Paréntesis: tipos de componentes
+
+Hay componentes con los que podemos interactuar y desencadenar una acción puntual: enlaces y botones. Suelen verse como:
+  - círculos o cuadrados redondeados. Formato típico de los _call to action_
+  - "tres puntitos" y "hamburguesas". Formato típico para abrir menús y desencadenar acciones contextuales (generalmente de menor _valor_ que los _call to action_)
+
 
 ### Situación del sistema científico universitario
 
@@ -34,6 +42,11 @@ Realizamos una breve mención a técnicas y tecnologías de pruebas punta a punt
 
   * [Cypress](https://www.cypress.io/)
   * [Playwright](https://playwright.dev/)
+
+Otras (más historicas, pero igual vigentes):
+
+  * Selenium
+  * Capybara
 
 Mencionamos sus ventajas y desventajas: por un lado son herramientas que permiten la prueba a lo largo y ancho de un sistema, asegurando que casos de uso completos puedan ser validados, aún cuando involucran interacciones con sistemas externos. Por otro lado, por su naturaleza las pruebas son frágiles y altamente dependientes de pequeñas modificaciones a las interfaces. Aún así, esto puede ser mitigado mediante un uso cuidadoso de selectores semánticos.
 
@@ -53,6 +66,43 @@ Respondemos dudas. En particular, focalizamos en cuestiones vinculadas a login y
       * como una forma de manejo de sesión en aplicaciones para usuaries como finales. En este caso, la autenticación se realiza mediante los mecanismos usuales, pero en este caso la cookie contiene al token.
       * como una forma de manejo de autenticación y autorización en el contexto de APIs HTTP.
 
+Y dejamos también unas notas finales sobre implementaciones "a mano" y la conveniencia de utilizar soluciones de gestión de usuaries como Keycloack.
+
+Estas son algunas de las notas de clase que tomamos:
+
+> - Autorización
+>   - Poder evaluar permisos de acceso a ciertos recursos u operaciones
+>   - Porque queremos restringir el acceso sólo a quien tenga tal autorización
+>
+> - Autenticación
+>   - Validar que un actor sea quien dice ser
+>     - ¿Cómo se lo valida?
+>       - En el mundo físico hay muchas opciones
+>       - En el mundo virtual:
+>           - usuario y contraseña (forma más básica)
+>           - dos factores (two factor authentication)
+>           - métodos tradicionales: fotos de DNI, pasaporte etc
+>           - datos biométricos
+>           - tokens (código) al portador (_bearer_) (sobre todo con actores no humanos)
+>   - Una vez que estamos autenticados:
+>     - podemos evaluar permisos
+>     - podemos acceder a información personalizada
+>
+> Si soy una persona física, jurídica o de alguna forma mapeable a un ser humano y necesitamos
+> autenticarme, tendré que hacer _login_ para autenticarme.
+>
+> Pero si HTTP es stateless, en cada pedido debería volver a enviar mis credenciales.
+> Como esto es impráctico, en su lugar vamos a autenticarnos una sóla vez y crear un estado
+> que perdure la duración del caso de uso. Ese estado conversacional se llama sesión.
+>
+>   Corolario: login = autenticación + creación de una sesión => "iniciar sesión".
+>     En la sesión típicamente ejecutaremos más de un caso de uso (y típicamente ejecutaremos al menos uno).
+>
+> Como hacemos para gestionar la sesión un protocolo stateless como HTTP? Usando cabeceras (headers):
+>
+>   - Cookie:  `=>`
+>   - Set-Cookie:  `<=`
+>
 
 # Material
 
