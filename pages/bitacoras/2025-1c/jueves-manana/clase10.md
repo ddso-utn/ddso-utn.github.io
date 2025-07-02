@@ -96,7 +96,8 @@ EXPOSE 8080
 # Material
 
 * [Presentación Docker](....)
-* [Apunte Docker](...)
+* [Apunte Docker](https://docs.google.com/document/d/16-ZVmZQrCbFDDnEyI8eABSp2rwsw3bz1WYyJ7DM9Rxw/edit?tab=t.0)
+* [Otro apunte de Docker](...)
 * Instalación Docker
 
 # Tarea
