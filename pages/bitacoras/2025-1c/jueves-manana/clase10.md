@@ -95,11 +95,6 @@ EXPOSE 8080
 
 # Material
 
-* [Presentación Docker](....)
+* [Presentación Docker](https://docs.google.com/presentation/d/12N1BJhtlOYgTFzp3DP6Rl9xJQEZ2aN0qzf4O2H0KHKc/edit?slide=id.p7#slide=id.p7)
 * [Apunte Docker](https://docs.google.com/document/d/16-ZVmZQrCbFDDnEyI8eABSp2rwsw3bz1WYyJ7DM9Rxw/edit?tab=t.0)
-* [Otro apunte de Docker](...)
-* Instalación Docker
-
-# Tarea
-
-_Sección en progreso_
+* [Otro apunte de Docker](https://docs.google.com/document/d/1xYF69TcGLIcQ3_fJnO7zUet6c5ud1zlFuinaRfNC3rU/edit?tab=t.0)
