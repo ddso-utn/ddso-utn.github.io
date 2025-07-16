@@ -20,7 +20,7 @@ En esta clase conversamos sobre cobre conceptos de UX y accesibilidad. En partic
   1. Qué es UX o experiencia de usuarie. Hablamos de la idea de aportar valor a le usuarie, o mas bien, a la empresa u organización dueña del sistema / producto y de cómo la UX busca llevar a la persona a realizar las acciones más importantes / de más valor.
   2. Cómo se diferencia del diseño de UI y Usabilidad (poder utilizar / descubrir la funciones del sistema con mínima ayuda, tanto en un primer uso como en usos subsecuentes). Mencionamos que la usabilidad está vinculada con saber donde están las cosas y en que el sistema presente reacciones esperables,es decir que presente un bajo nivel de sorpresa. Además, la vinculamos con conceptos tales como espaciado, tipografías, colores, tamaños, proximidad, orden de lectura, diseño mobile first, _analytics_, _calls to action_, tiempos de espera y cuestiones de contraste. Todos estos contenidos serán desarrollados en profundidad en el video de UX.
   3. En qué se diferencia del concepto de accesibilidad y por qué es tan importante (ser accesible no es una opción, **es una obligación***). En particular:
-    * Presentamos los atributos ARIA, los atributos `alt` y las etiquetas semánticas.
+    * Presentamos los [atributos ARIA](https://developer.mozilla.org/es/docs/Web/Accessibility/ARIA), los [atributos `alt`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/alt) y las [etiquetas semánticas](https://developer.mozilla.org/es/docs/Learn_web_development/Core/Accessibility/HTML).
     * Hablamos de lectores de pantalla
     * Hablamos sobre validadores de accesibilidad
 
