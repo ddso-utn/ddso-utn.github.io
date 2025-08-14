@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Martes
-description: Turno Noche - 2025 - Primer Cuatrimestre
+description: Turno Noche - 2025 - Segundo Cuatrimestre
 permalink: /bitacoras/2025-2c/martes-noche/
 frame: "https://docs.google.com/spreadsheets/d/1Yn_B-RFyVP2wZKfYQIDE5NWpNVypBuwObN10wMHGksg/edit?gid=0#gid=0"
 

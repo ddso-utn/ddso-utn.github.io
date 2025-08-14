@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Clase 2
-description: Jueves Mañana, 2025, Primer Cuatrimestre
+description: Jueves Mañana, 2025, Segundo Cuatrimestre
 permalink: /bitacoras/2025-2c/jueves-manana/clase-02/
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Clase 4
-description: Martes Noche, 2025, Primer Cuatrimestre
+description: Martes Noche, 2025, Segundo Cuatrimestre
 permalink: /bitacoras/2025-2c/martes-noche/clase-04/
 ---
 

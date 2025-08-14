@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Jueves
-description: Turno Noche - 2025 - Primer Cuatrimestre
+description: Turno Noche - 2025 - Segundo Cuatrimestre
 permalink: /bitacoras/2025-2c/jueves-manana/
 frame: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSeq0x8tWvWNh7k-QgLTKuZ8pjpMf1y-PqFcKyqNSGzFgMEwdtFN_i53JArx1BWmYbeWxZRD5SIXZuR/pubhtml?gid=0&single=true"
 
