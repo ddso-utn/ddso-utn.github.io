@@ -11,7 +11,8 @@ permalink: /bitacoras/2025-2c/jueves-manana/clase-02/
  * Introducción a herramientas
  * Proceso de desarrollo. Etapas
  * Intro a backend con API REST. Concepto de framework y biblioteca
- * Internet. Web. HTTP. REST
+ * HTTP. REST
+ * Modelo de Capas: Capa de Dominio Capa de Services, Capa de Controladores, Capa de Repositorios. Manejo de errores.  Alternativas, ventajas y desventajas. Intepretación del modelo.
 
 
 # Resumen
@@ -68,7 +69,7 @@ Pero, ¿por qué son relevantes ambos entornos? Porque vamos a trabajar en ambos
 También nos sirve para contar una verdad sobre algo que no profundizamos en el encuentro anterior: el cliente no es un ser humano, sino un dispositivo, que corre otro software:
 
   - puede ser, por ejemplo, un cliente de línea de comandos (como `curl`)
-  - o puede, más comunmente, un navegador (Firefox, etc)
+  - o puede, más comúnmente, un navegador (Firefox, etc)
 
 En la arquitectura Web, programar en el servidor es obligatorio, hacerlo en el cliente no. De hecho, hay diferentes estilos de clientes:
   - cliente liviano: solo tienen programación (significativa) en el servidor. En DDSi se trabajará esta arquitectura.
@@ -124,6 +125,28 @@ Mencionamos dos tecnologías para interactuar con APIs desde JavaScript:
    2. `express`: framework para exponer APIs HTTP
 
 Y por último, mencionamos el problema del asincronismo (profundizaremos luego en las [promesas](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Promise) y las palabras clave `async` y `await`)
+
+## Modelo de capas
+
+Ya hablamos bastante sobre aspectos físicos de las arquitecturas, es decir, sobre cuestiones de infraestructura tecnológica y sobre cómo distribuimos (o no) nuestros programas a lo largo de los nodos de una red. Sin embargo, poco hablamos sobre como organizar nuestros componentes lógicos (es decir, aquellos que podemos pensar y trabajar con cierta independencia de la tecnología de cómputo subyacente) tales como objetos, clases, módulos y paquetes. ¿Cómo organizar entonces nuestro código? ¿Cómo repartir nuestras responsabilidades?
+
+En particular, en el contexto de la programación del _lado del servidor_ (ya sea porque estamos en una arquitectura web de cliente liviano o porque estamos trabajando en backend de una arquitectura web cliente pesado), hay varias formas de responder a esto:
+
+  * Modelo de capas
+  * Modelo MVC Web
+  * Modelo VIP (_Interactor_)
+  * Modelos orientados a objetos sin una arquitectura particular
+
+En esta materia estudiaremos el primero, que organiza a los componentes lógicos en 4 grupos principales (llamados capas o _layers_), clara y rígidamente estratificados. En este modelo se sigue una metáfora que recuerda a las capas geológicas: contamos capas _superiores_, cercanas al mundo HTTP, que van descendiendo hasta llegar a capas _inferiores_, vinculadas a la persistencia de datos. Además, cada capa sólo presenta interacciones con su capaz directamente superior o inferior:
+
+  1. Capa de enrutamiento (nivel superior), en la que encontraremos _rutas_
+  2. Capa de controladores, en la que encontraremos _controladores_
+  3. Capa de servicios, en la que encontraremos _servicios_
+  4. Capa de persistencia (nivel inferior), en la que encontraremos _modelos_ y _repositorios_ (también llamados _managers_ o _DAOs_)
+
+> ⚠️ Es importante tener en cuenta que esta explicación es intencionalmente esquemática: la estructura de capas
+> presenta muchas variantes (por ejemplo en algunas arquitecturas lógicas se trazan diferencias entre _repositorios_ y _managers_, o la capa de enrutamiento se omite) y diferentes interpretaciones (más rígidas o más laxas)
+>
 
 
 # Material

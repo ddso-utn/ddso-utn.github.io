@@ -42,6 +42,19 @@ En este encuentro hablamos de:
 
 ![](https://www.plantuml.com/plantuml/png/IqmkoIzISCx9JCqhIULIuChBJqbL24ujAijC0OfpfIIM92Ob5gSgE049brINn9ByOYukg785NJkuKYuO0oY8eXW0)
 
+  5. La diferencia entre Internet (una red global y pública de computadoras) y la Web (un servicio que permite consular páginas hipervinculadas)
+  6. Las principales tecnologías y protocolos de la Web: HTTP, HTTPS, HTML, CSS, JS.
+  7. Algunas clasificaciones de las arquitecturas:
+     * Procesos de vida corta (scripts, comandos, etc) vs de Vida larga (aplicaciones de escritorio, servidores, `REPLs`/intérpretes, etc)
+     * Centralizadas (también llamadas monolíticas) vs Distribuídas
+     * Lógicas vs Físicas
+     * Arquiteturas Web de cliente liviano vs cliente pesado
+        * Dentro de cliente pesado: Frontend vs Backend
+        * En general: arquitecturas web "monolíticas" vs "distribuidas"
+  8. Una introducción a HTTP, como protocolo cliente servidor basado en texto plano, el cual define operaciones en términos de verbos, cabeceras, rutas, recursos, etc.
+  9. Una mención a tecnologías misceláneas que veremos a lo largo del cuatrimestre como DOM, Mongo y Docker.
+  10. Una brevísima mención a las arquitecturas lógicas comunes en el mundo de la programación backend.
+
 # Material
 
  * [Introducción a Arquitectura](https://docs.google.com/document/d/1XaKMrWPA0jntDK29gtEDRw-CoQgWXfHOmdbmihg4MpE/edit?tab=t.0#heading=h.z9jwy1eurzt9)
