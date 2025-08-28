@@ -102,6 +102,7 @@ Si no lo hiciste ya:
  * Leer [Biblioteca vs Framework](https://docs.google.com/document/d/1D_MCoh4J8kL1MAKNlbDgAMu2nYxri-81nZBYOPFWnO0/edit?tab=t.0#heading=h.6ab0fffv8tld)
  * Leer el enunciado del TP
  * Repasá el video de manejo de Dependencias (`npm`) y flujos de trabajo con `git` del sábado pasado
+ * [Introducción al Desarrollo de Software](https://docs.google.com/document/d/10X8VbMkvJ99JOzH2LuIF2DfGQ55IZpO3ba7eT28Ot4o/edit?tab=t.0)
 
 Además:
 
