@@ -136,6 +136,7 @@ En particular, en el contexto de la programación del _lado del servidor_ (ya se
   * Modelo MVC Web
   * Modelo VIP (_Interactor_)
   * Modelos orientados a objetos sin una arquitectura particular
+  * Modelos orientados a objetos organizados únicamente en torno a _incumbencias_ de presentación, dominio y persistencia. Muchas veces esta idea y el modelo de capas convergen, pero acá la organización entre componentes no es tan rígida.
 
 En esta materia estudiaremos el primero, que organiza a los componentes lógicos en 4 grupos principales (llamados capas o _layers_), clara y rígidamente estratificados. En este modelo se sigue una metáfora que recuerda a las capas geológicas: contamos capas _superiores_, cercanas al mundo HTTP, que van descendiendo hasta llegar a capas _inferiores_, vinculadas a la persistencia de datos. Además, cada capa sólo presenta interacciones con su capaz directamente superior o inferior:
 

@@ -65,7 +65,7 @@ En el ámbito particular del desarrollo web podemos encontrar dos prominentes (q
 
 - MVC Web del lado del servidor: Inspirado en el patrón _Model-View-Controller_ de los años 80, adaptado a aplicaciones web. La lógica del servidor está dividida en controladores (que manejan la interacción del usuario), modelos (que representan los datos y lógica de negocio), y vistas (que generan las respuestas HTML o datos). Ejemplo clásico: aplicaciones con Ruby on Rails o Django.
 - MVC (y derivados MVP, MVVM) Web del lado del cliente: cuando se utiliza un cliente pesado, el patrón MVC puede migrar al navegador. Frameworks como React (aunque no implementa MVC estrictamente), Angular o Vue ofrecen formas de organizar el código del cliente con separación entre lógica, datos y presentación.
-- Modelo basado en _concerns_ (incumbencias): organiza el backend en capas como Presentación, Dominio, y Persistencia. Esta separación permite un mayor desacoplamiento y escalabilidad, alineándose muchas veces con prácticas de diseño orientadas a dominio (como DDD).
+- Modelo basado en _concerns_ (incumbencias): organiza el backend en grupos de componentes lógicos como Presentación, Dominio, y Persistencia. Esta separación permite un mayor desacoplamiento y extensibilidad, alineándose muchas veces con prácticas de diseño orientadas a dominio (como DDD).
 - Modelo en capas: típicamente incluye capas como Controladores, Servicios, Repositorios y Modelos, y utiliza DTOs para la transferencia de información. Leer el  capítulo 4 del Libro Domain Driven Design de Eric Evans (ver materiales).
 - Modelo orientado a objetos (OO): no es un patrón arquitectónico per se, pero se integra bien con los anteriores. Apunta a modelar el dominio a partir de un conjunto de objetos que colaboran sin una estructura a-priori, sino guiada por los requerimientos. En los mundos de MVC o la separación en base a _concerns_,  el modelo puede estar organizando en torno a un dominio de objetos sin otra estructura particular.
 
@@ -105,5 +105,4 @@ Si no lo hiciste ya:
 
 Además:
 
- * [Leer la nueva versión del tutorial de express](https://docs.google.com/document/d/1Nn6GMzm7bD9tvVi_wGjLbt8X4KEk5IChzXdPpEFK4vY/edit?tab=t.0#heading=h.halhyllz00mo) y ver el código asociado.
  * ¡No te olvides de asistir a la próxima clase de los sábados!
