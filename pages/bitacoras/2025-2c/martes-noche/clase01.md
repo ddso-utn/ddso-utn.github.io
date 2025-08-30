@@ -18,6 +18,10 @@ Si bien está pensado para que puedas seguir lo visto estés donde estés, es im
 
  * Rodolfo Caputo (rodcap.93@gmail.com)
  * Jessica Saavedra (jessicasaavedraval@gmail.com)
+ * Lucas Schvartzman
+ * Lucas Aponte
+ * Gabriel Litwin
+ * Nicolás Kalaydjian
 
 # Resumen
 
@@ -110,6 +114,7 @@ En esta clase hablamos de:
 # Material
 
 * [Domain Driven Design - Eric Evans (inglés)](https://fabiofumarola.github.io/nosql/readingMaterial/Evans03.pdf)
+* [Introducción al DDS] (https://docs.google.com/document/d/10X8VbMkvJ99JOzH2LuIF2DfGQ55IZpO3ba7eT28Ot4o/edit?tab=t.0#heading=h.kgjpx7du1c07)
 
 # Tarea
 
