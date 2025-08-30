@@ -370,4 +370,6 @@ Posteriormente, esa API será consumida desde el frontend, que procesará los da
  - [Video de Cualidades de Diseño](https://drive.google.com/file/d/1enIq0az1Fx9dtB70GWRayN1i917yf5M6/view)
 
 # Para la próxima clase
-Estaremos trabajando sobre el enunciado de [Kommanda](https://docs.google.com/document/d/1QHOLDwn7LaETVxSIkOWK5nGT9xrBjatjZoiKafDebsw/edit?tab=t.0#heading=h.btqp28xuwru4). La idea es que lo traigan leido y tengan pensado cΩΩeomo implementarían el modelo de objetos. Si se animan a empezar a pensar algunas rutas, mejor aun! Comenzaremos poniendo en común una solución para el modelo de dominio (no discutirermos sobre el mismo) y luego avanzaremos en la definición de Rutas HTTP que más tarde comenzaremos a implementar 
+Estaremos trabajando sobre el enunciado de [Kommanda](https://docs.google.com/document/d/1QHOLDwn7LaETVxSIkOWK5nGT9xrBjatjZoiKafDebsw/edit?tab=t.0#heading=h.btqp28xuwru4). 
+
+La idea es que lo traigan leido y tengan pensado cómo implementarían el modelo de objetos. Si se animan a empezar a pensar algunas rutas, mejor aun! Comenzaremos poniendo en común una solución para el modelo de dominio (no discutirermos sobre el mismo) y luego avanzaremos en la definición de Rutas HTTP que más tarde comenzaremos a implementar 
