@@ -3,7 +3,10 @@
 
 **Fecha: 26 de Agosto de 2025**
 
-# 📑Índice
+# Resumen
+Esta clase hablamos de Arquitectura de Software, cuáles son los esquemas más comunes y qué restricciones nos impone la tecnología. Aparte, respondimos consultas sobre Git y enviamos un video sobre Cualidades de Diseño 
+
+## 📑 Arquitectura y DDS: Índice
 
 - [Introducción](#introduccion)
 - [Centralización](#centralizacion)
@@ -28,7 +31,7 @@
 - [Conclusión](#conclusion)
 
 <a id="introduccion"></a>
-# Introducción
+## Introducción
 
 Cuando hablamos de **arquitectura de software**, nos referimos a la manera en que se organizan las diferentes partes de una aplicación y cómo interactúan entre sí.
 
@@ -51,7 +54,7 @@ Si miramos las aplicaciones que usamos todos los días —como **Gmail**, **Inst
 Dado que existe una gran variedad de aplicaciones, resulta útil clasificarlas según dónde se ejecutan sus componentes y cómo se comunican entre sí. Para ello, hablemos de la **centralización**.
 
 <a id="centralizacion"></a>
-# Centralización
+## Centralización
 
 La **centralización** en arquitectura de software no se refiere a equipos físicos, sino a **cómo se distribuyen** las responsabilidades y los recursos de una aplicación.
 
@@ -64,7 +67,7 @@ En líneas generales, existen dos enfoques:
 Es importante remarcar que estas son **cualidades relativas, no absolutas**; una aplicación puede estar mas o menos centralizada dependiendo de cómo esté diseñada.
 
 <a id="estilos-de-arquitectura"></a>
-## Estilos de arquitectura
+### Estilos de arquitectura
 
 De los enfoques mencionados surgen algunos estilos de arquitectura que son muy utilizados:
 
@@ -91,7 +94,7 @@ En definitiva, la **arquitectura actual es el resultado de una mezcla de decisio
 Al final del día, lo que buscamos es **adoptar la arquitectura que mejor se adapte a nuestro contexto**, aquella que resulte más sencilla de implementar y que nos permita materializar la aplicación.
 
 <a id="web-internet"></a>
-# 🌐 La Web e Internet
+## 🌐 La Web e Internet
 
 Para entender dónde “viven” las aplicaciones que usamos todos los días, conviene separar dos conceptos fundamentales:
 
@@ -133,7 +136,7 @@ Podemos observar que la Web, entendida como el **conjunto de aplicaciones que co
 Es ahora que toca preguntarnos: *¿Cómo se comunican el cliente y el servidor?*
 
 <a id="http"></a>
-# 📨 HTTP: El idioma de la Web
+## 📨 HTTP: El idioma de la Web
 
 El protocolo **HTTP (HyperText Transfer Protocol)** define cómo un cliente y un servidor intercambian información. Se basa en tres ideas simples:
 
@@ -144,10 +147,10 @@ El protocolo **HTTP (HyperText Transfer Protocol)** define cómo un cliente y un
 3. **Textual**: los mensajes son texto plano, legibles por humanos y fáciles de inspeccionar.
 
 <a id="elementos-conceptos"></a>
-## Elementos y conceptos
+### Elementos y conceptos
 
 <a id="metodos"></a>
-### Métodos 
+#### Métodos 
 
 Los **métodos** expresan la operación que un cliente quiere que el servidor realice sobre un recurso. Ellos son:
 
@@ -171,7 +174,7 @@ Los **métodos** expresan la operación que un cliente quiere que el servidor re
 > **Nota**: Existen otros métodos (como `HEAD`, `OPTIONS` o `TRACE`), pero no los utilizaremos en esta materia.
 
 <a id="codigos-estado"></a>
-### Códigos de estado
+#### Códigos de estado
 
 Los **códigos de estado** son números de tres dígitos que acompañan cada respuesta HTTP e indican el **resultado** de la petición.
 
@@ -187,7 +190,7 @@ Se agrupan en familias según el primer dígito:
 
 > 💡 **Tip**: pueden explorar todos los códigos en [http.cat](https://http.cat/) 🐱 o [http.dog](https://http.dog/) 🐶.
 
-### JSON
+#### JSON
 
 **JSON** (*JavaScript Object Notation*) es un **formato de texto** utilizado para representar e intercambiar datos de manera estructurada.
 
@@ -211,7 +214,7 @@ Por ejemplo:
 ```
 
 <a id="pedido"></a>
-## Cómo es un pedido
+### Cómo es un pedido
 
 Un **pedido** (o *request*) contiene:
 
@@ -236,7 +239,7 @@ Authorization: Bearer token-super-seguro-123
 > **Aclaración**: No escribiremos estos pedidos a mano: usaremos herramientas especializadas como [**Postman**](https://www.postman.com/web).
 
 <a id="respuesta"></a>
-## Cómo es una respuesta
+### Cómo es una respuesta
 
 Una **respuesta** (o *response*) contiene:
 
@@ -262,19 +265,19 @@ Content-Length: 58
 ```
 
 <a id="clasificacion-cliente"></a>
-# Clasificación del cliente
+## Clasificación del cliente
 
 Si pensamos en **quién construye la interfaz de usuario** en aplicaciones **cliente–servidor**, podemos distinguir dos modelos clásicos:
 
 <a id="cliente-liviano"></a>
-## Cliente liviano
+### Cliente liviano
 
 En este modelo el servidor hace casi todo: procesa la lógica de negocio, arma las páginas y se las envía al cliente para que las muestre sin mayor procesamiento.
 
 El cliente (por ej. el navegador) recibe principalmente **HTML** —es decir, "vistas" que están listas para mostrar.
 
 <a id="cliente-pesado"></a>
-## Cliente pesado
+### Cliente pesado
 
 En este modelo el servidor **no envía páginas listas**, sino **datos crudos** (ej. en formato **JSON**). 
 
@@ -283,7 +286,7 @@ El cliente es quien se encarga de **interpretar esos datos y construir la interf
 > Este es el enfoque más común en aplicaciones modernas, y el que usaremos en este curso.
 
 <a id="rest"></a>
-# REST
+## REST
 
 **REST** (*Representational State Transfer*) es un **estilo de arquitectura** muy popular para diseñar **APIs sobre HTTP**.
 
@@ -294,7 +297,7 @@ En REST, el foco está en **exponer recursos** (usuarios, productos, etc.) media
 > Una **URI** (*Uniform Resource Identifier*) indica la ubicación exacta de un recurso.
 
 <a id="recursos-uris"></a>
-## Recursos y URIs
+### Recursos y URIs
 
 Un **recurso** es “algo” del dominio que queremos exponer y las rutas (*URIs*) los ubican:
 
@@ -313,7 +316,7 @@ Un **recurso** es “algo” del dominio que queremos exponer y las rutas (*URIs
 ---
 
 <a id="api-backend-rest"></a>
-# APIs y backend REST
+## APIs y backend REST
 
 Una **API REST** es un **servidor** que expone información y operaciones mediante **endpoints**.
 
@@ -324,7 +327,7 @@ Cada **endpoint** es la combinación de una **URI** (recurso) y un **método** (
 - `DELETE /usuarios/204` → elimina al usuario con ID 204.  
 
 <a id="rol-servidor"></a>
-## Qué hace el servidor
+### Qué hace el servidor
 
 El **servidor** REST cumple dos funciones clave:  
 
@@ -334,7 +337,7 @@ El **servidor** REST cumple dos funciones clave:
 Cuando recibe un pedido HTTP, el servidor lo interpreta, ejecuta la lógica correspondiente y responde con datos en **JSON**, siguiendo las convenciones de REST.  
 
 <a id="rol-cliente"></a>
-## Qué hace el cliente
+### Qué hace el cliente
 
 En nuestro caso usamos un **cliente pesado**.  Esto significa que:  
 
@@ -344,7 +347,7 @@ En nuestro caso usamos un **cliente pesado**.  Esto significa que:
 Cada vez que necesita algo, hace un **pedido HTTP** a un endpoint específico, obtiene un JSON como respuesta y lo utiliza para **renderizar la interfaz** que ve el usuario.
 
 <a id="conclusion"></a>
-# Conclusión
+## Conclusión
 
 Para cerrar, es importante remarcar cómo todos estos conceptos se conectan con el trabajo práctico que van a realizar:
 
@@ -356,6 +359,8 @@ El primer paso será diseñar y construir una **API REST**, encargada de exponer
 
 Posteriormente, esa API será consumida desde el frontend, que procesará los datos y generará la interfaz de usuario con la que interactuarán directamente.
 
----
+# Material
+ - [Video de Cualidades de Diseño](https://drive.google.com/file/d/1enIq0az1Fx9dtB70GWRayN1i917yf5M6/view)
 
-*Documento escrito por Lucas Nicolás Schvartzman.*
+# Para la próxima clase
+Estaremos trabajando sobre el enunciado de [Kommanda](https://docs.google.com/document/d/1QHOLDwn7LaETVxSIkOWK5nGT9xrBjatjZoiKafDebsw/edit?tab=t.0#heading=h.btqp28xuwru4). La idea es que lo traigan leido y tengan pensado cΩΩeomo implementarían el modelo de objetos. Si se animan a empezar a pensar algunas rutas, mejor aun! Comenzaremos poniendo en común una solución para el modelo de dominio (no discutirermos sobre el mismo) y luego avanzaremos en la definición de Rutas HTTP que más tarde comenzaremos a implementar 
