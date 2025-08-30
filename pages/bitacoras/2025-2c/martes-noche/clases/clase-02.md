@@ -1,3 +1,10 @@
+---
+layout: page
+title: Clase 2
+description: Martes Noche, 2025, Segundo Cuatrimestre
+permalink: /bitacoras/2025-2c/martes-noche/clases/clase-02/
+---
+
 # Clase N°2: Arquitectura y HTTP
 *Desarrollo de Software K3552 (Martes Noche)*
 
