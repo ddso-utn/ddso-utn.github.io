@@ -115,6 +115,7 @@ En esta clase hablamos de:
 
 * [Domain Driven Design - Eric Evans (inglés)](https://fabiofumarola.github.io/nosql/readingMaterial/Evans03.pdf)
 * [Introducción al DDS] (https://docs.google.com/document/d/10X8VbMkvJ99JOzH2LuIF2DfGQ55IZpO3ba7eT28Ot4o/edit?tab=t.0#heading=h.kgjpx7du1c07)
+* [Canal de consultas del curso] (https://discord.gg/nxM44r7G)
 
 # Tarea
 
