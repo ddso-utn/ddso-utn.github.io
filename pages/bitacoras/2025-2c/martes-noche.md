@@ -3,8 +3,7 @@ layout: page
 title: Martes
 description: Turno Noche - 2025 - Segundo Cuatrimestre
 permalink: /bitacoras/2025-2c/martes-noche/
-frame: "https://docs.google.com/spreadsheets/d/1Yn_B-RFyVP2wZKfYQIDE5NWpNVypBuwObN10wMHGksg/edit?gid=0#gid=0"
-
+frame: https://docs.google.com/spreadsheets/d/1leusZ335jTj8HVzJM647xhUn-5anmLLzo1vh2D3dCW8/edit?usp=sharing
 ---
 
 ## Clases
@@ -12,9 +11,4 @@ frame: "https://docs.google.com/spreadsheets/d/1Yn_B-RFyVP2wZKfYQIDE5NWpNVypBuwO
 Cada enlace te lleva a lo visto y lo que hay que ver antes de la siguiente clase.
 
 - [Clase 1: Qué es Desarrollo de software]({{site.baseurl}}/bitacoras/2025-2c/martes-noche/clase-01)
-- [Clase 2: Cualidades, Git, NPM y Express]({{site.baseurl}}/bitacoras/2025-2c/martes-noche/clase-02)
-- [Clase 3: Arquitectura Web y HTTP]({{site.baseurl}}/bitacoras/2025-2c/martes-noche/clase-03)
-- [Clase 4: Intro a Backend REST]({{site.baseurl}}/bitacoras/2025-2c/martes-noche/clase-04)
-- [Clase 5: Backend REST avanzado]({{site.baseurl}}/bitacoras/2025-2c/martes-noche/clase-05)
-- [Clase 7: Persistencia]({{site.baseurl}}/bitacoras/2025-2c/martes-noche/clase-07)
-- [Clase 8: Introducción a Frontend - HTML y CSS]({{site.baseurl}}/bitacoras/2025-2c/martes-noche/clase-08)
+- [Clase 2: Arquitectura Web y HTTP]({{site.baseurl}}/bitacoras/2025-2c/martes-noche/clases/clase-02)
