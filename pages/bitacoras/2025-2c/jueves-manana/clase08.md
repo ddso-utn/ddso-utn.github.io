@@ -10,6 +10,7 @@ permalink: /bitacoras/2025-2c/jueves-manana/clase-08/
 * Logica de servicio (API). Transformaciones. CORS
 * Manejo de estado global.
 * Logica de dominio visual. Validaciones
+* Sesión
 
 # Resumen
 

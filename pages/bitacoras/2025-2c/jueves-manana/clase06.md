@@ -7,28 +7,22 @@ permalink: /bitacoras/2025-2c/jueves-manana/clase-06/
 
 # Temeario
 
- * Patrones de UI. Componentes. Conceptos
- * Client side vs Server Side.
- * MVC. MVVM.
  * Reactividad. Variantes. Generalizacion.
 
 # Resumen clase
 
 ## Arquitectura de presentación
 
-  * Repaso de la arquitectura **cliente pesado**, con **dibujado del lado del cliente**, **_single page_**:
-    * El cliente descarga del servidor la mayoría de los recursos (código HTML, JS, CSS, Fuentes, etc)
-    * El cliente renderiza el HTML _esquelético_ de la página principal
-    * El cliente ejecuta el código JS que dibuja los componentes dinámicos y realiza más llamados al servidor, que ahora devuelve sólo datos en un formato estructurado, como JSON
-    * El cliente termina de dibujar los componentes usando los datos
-    * El cliente queda a la espera de nuevos eventos de le usuarie. Ante ellos, disparará:
-      * la ejecución de lógica de dominio y presentación
-      * la carga de nuevos datos o la modificación de los mismos en el servidor
-      * el dibujado de nuevas pantallas y componentes
-  * Formas de organizar el código y arquitectura de presentación:
-    * MVC: Modelo, Vista y Controlador
-    * MVVM: Modelo, Vista y Modelo de la Vista. Binding bidireccional
-    * Reactividad
+Repaso de la arquitectura **cliente pesado**, con **dibujado del lado del cliente**, **_single page_**:
+
+  * El cliente descarga del servidor la mayoría de los recursos (código HTML, JS, CSS, Fuentes, etc)
+  * El cliente renderiza el HTML _esquelético_ de la página principal
+  * El cliente ejecuta el código JS que dibuja los componentes dinámicos y realiza más llamados al servidor, que ahora devuelve sólo datos en un formato estructurado, como JSON
+  * El cliente termina de dibujar los componentes usando los datos
+  * El cliente queda a la espera de nuevos eventos de le usuarie. Ante ellos, disparará:
+    * la ejecución de lógica de dominio y presentación
+    * la carga de nuevos datos o la modificación de los mismos en el servidor
+    * el dibujado de nuevas pantallas y componentes
 
 ## React
 
