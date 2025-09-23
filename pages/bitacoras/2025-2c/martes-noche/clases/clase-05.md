@@ -62,14 +62,22 @@ La base para definir qué caminos conviene probar son los **requerimientos**. Ca
 
 Podemos analizar nuestras pruebas en dos niveles:
 
-- **Casos de test:** Son pruebas concretas con entradas y expectativas determinadas. Ejemplo: Para probar que el sistema identifica a los usuarios mayores de edad correctamente, probamos con un usuario de 25 años.
+- **Casos de test:** Son pruebas concretas con entradas y expectativas determinadas. 
 
-- **Clases de test:** Agrupan conceptualmente todas las pruebas posibles que validan un mismo escenario. Dados dos tests de la misma clase, estos son equivalentes (es decir, prueban lo mismo). Ejemplo: Para probar que el sistema identifica a los usuarios mayores de edad correctamente, podemos probar con un usuario de 25, 50 o 76 años. Cualesquiera de esos 3 *casos* de test, pertenecen a la misma *clase*
+> **Ejemplo**: Para verificar que el sistema identifica a los usuarios mayores de edad correctamente, probamos con un usuario de 25 años.
 
-En general, vamos a tender a no repetior demasiados casos dentro de una msima clase (usualmente haremos solo uno) 
+- **Clases de test:** Agrupan conceptualmente todas las pruebas posibles que validan un mismo escenario. 
+
+> **Observación**: Dados dos tests de la misma clase, estos son equivalentes (es decir, prueban lo mismo). 
+
+
+> **Ejemplo**: En realidad, cualquier edad mayor a 18 debería dar el mismo resultado. Por eso, probar con 25, 50 o 76 años es equivalente: son distintos *casos*, pero todos pertenecen a la misma *clase*.
+
+En general, vamos a tender a no repetir demasiados casos dentro de una misma clase (usualmente haremos solo uno) 
 
 <a id="estructura"></a>
 ## Estructura
+
 Un test bien diseñado sigue una narrativa clara que puede resumirse en tres pasos:
 
 1. **Precondiciones**: definimos el contexto inicial, configurando datos, objetos o estados necesarios.  
@@ -83,7 +91,9 @@ Más adelante veremos un esquema que servirá de guía en la mayoría de los enf
 <a id="automatizacion"></a>
 ## Automatización
 
-Automatizar tests no es un fin en sí mismo: conviene hacerlo cuando aporta verdadero valor. Un test automático es mas rápido de correr, involucra menos humanos (suele ser más barato) y provee regresión automátcamente. Pero si el test es complejo de ejecutar para una compuatdora, o si es dificil de mantener, las pruebas manuales pueden ser una mejor solución.
+Automatizar tests no es un fin en sí mismo: conviene hacerlo cuando aporta verdadero valor. 
+
+Un test automatizado se ejecuta más rápido, requiere menos intervención humana (lo que suele hacerlo más barato) y permite detectar regresiones de forma automática. Sin embargo, si resulta muy complejo de automatizar o costoso de mantener, puede ser preferible realizar la prueba de manera manual.
 
 <a id="independencia"></a>
 ## Independencia
@@ -134,7 +144,7 @@ test('suma dos números', () => {
 
 Los **tests de integración** verifican que varios módulos funcionen bien en conjunto.
 
-Su propósito es detectar errores que no aparecen en unitarios, y que están más relacionados con la colaboracieon de varios componentes  (como una transformación de datos entre dos componentes que no ocurre correctamente)
+Su propósito es detectar errores que no aparecen en unitarios, y que están más relacionados con la colaboración entre componentes, por ejemplo, cuando la transformación de datos entre dos módulos no ocurre correctamente.
 
 Aunque son más lentos y costosos que los unitarios, aportan confianza en que las piezas, además de funcionar aisladas, también lo hacen cuando se combinan.  
 
