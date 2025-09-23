@@ -2,7 +2,7 @@
 layout: page
 title: Clase 3
 description: Martes Noche, 2025, Segundo Cuatrimestre
-permalink: /bitacoras/2025-2c/martes-noche/clase-03/
+permalink: /bitacoras/2025-2c/martes-noche/clases/clase-03/
 ---
 
 # Resumen
