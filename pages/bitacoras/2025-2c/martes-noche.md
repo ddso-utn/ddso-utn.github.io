@@ -12,4 +12,6 @@ Cada enlace te lleva a lo visto y lo que hay que ver antes de la siguiente clase
 
 - [Clase 1: Qué es Desarrollo de software]({{site.baseurl}}/bitacoras/2025-2c/martes-noche/clase-01)
 - [Clase 2: Arquitectura Web y HTTP]({{site.baseurl}}/bitacoras/2025-2c/martes-noche/clases/clase-02)
+- [Clase 3: Backend Parte I]({{site.baseurl}}/bitacoras/2025-2c/martes-noche/clases/clase-03)
+- [Clase 4: Backend Parte II]({{site.baseurl}}/bitacoras/2025-2c/martes-noche/clases/clase-04)
 - [Clase 5: Testing]({{site.baseurl}}/bitacoras/2025-2c/martes-noche/clases/clase-05)

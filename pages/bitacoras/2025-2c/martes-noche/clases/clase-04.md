@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Clase 5
+title: Clase 4
 description: Martes Noche, 2025, Segundo Cuatrimestre
-permalink: /bitacoras/2025-2c/martes-noche/clase-05/
+permalink: /bitacoras/2025-2c/martes-noche/clase-04/
 ---
 
 # Resumen
@@ -26,5 +26,4 @@ En esta clase hicimos práctica avanzada de Backend REST con el ejercicio de Kom
 # Material
 
 * [Enunciado Kommanda](https://docs.google.com/document/d/1QHOLDwn7LaETVxSIkOWK5nGT9xrBjatjZoiKafDebsw/edit?tab=t.0#heading=h.btqp28xuwru4)
-* [Repo Con Resolución (sin services)](https://github.com/ddso-utn/kommanda/tree/clase-2-platos-y-comandas-sin-services)
-* [Repo Con Resolución (con services)](https://github.com/ddso-utn/kommanda/tree/clase-2-platos-y-comandas-con-services)
+* [Repo Kommanda](https://github.com/ddso-utn/kommanda)
