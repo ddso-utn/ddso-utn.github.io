@@ -64,7 +64,7 @@ Podemos analizar nuestras pruebas en dos niveles:
 
 - **Casos de test:** Son pruebas concretas con entradas y expectativas determinadas. Ejemplo: Para probar que el sistema identifica a los usuarios mayores de edad correctamente, probamos con un usuario de 25 años.
 
-- **Clases de test:** Agrupan conceptualmente todas las pruebas posibles que validan un mismo escenario. Dados dos tests de la misma clase, estos son equivalentes (es decir, prueban lo mismo). Ejemplo: Para probar que el sistema identifica a los usuarios mayores de edad correctamente, podeos probar con un usuario de 25, 50 o 76 años. Cualesquiera de esos 3 *casos* de test, pertenecen a la misma *clase*
+- **Clases de test:** Agrupan conceptualmente todas las pruebas posibles que validan un mismo escenario. Dados dos tests de la misma clase, estos son equivalentes (es decir, prueban lo mismo). Ejemplo: Para probar que el sistema identifica a los usuarios mayores de edad correctamente, podemos probar con un usuario de 25, 50 o 76 años. Cualesquiera de esos 3 *casos* de test, pertenecen a la misma *clase*
 
 En general, vamos a tender a no repetior demasiados casos dentro de una msima clase (usualmente haremos solo uno) 
 
@@ -83,27 +83,7 @@ Más adelante veremos un esquema que servirá de guía en la mayoría de los enf
 <a id="automatizacion"></a>
 ## Automatización
 
-Automatizar tests no es un fin en sí mismo: conviene hacerlo solo cuando aporta verdadero valor. Una forma de evaluarlo es hacerse estas tres preguntas:  
-
-1. **¿Es posible automatizar este test?**  
-   
-	Sí, siempre que las entradas y salidas estén bien definidas.  
-
-   > **Ejemplo:** un test unitario que valida la lógica de una clase.  
-
-2. **¿Qué beneficio aporta automatizarlo?**  
-   
-	La automatización brilla cuando necesitamos feedback rápido y confiable.  
-
-   > **Ejemplo:** al construir un service que utiliza clases de dominio, podemos automatizar los tests para asegurarnos de que la lógica central siga funcionando sin romperse.
-
-3. **¿Será mantenible en el tiempo?**  
-   
-	Un test que se rompe con cada cambio deja de ser una ayuda y se vuelve una carga.  
-
-   > **Ejemplo:** un test de UI que falla cada vez que cambia el nombre de un botón termina dando más ruido que certezas.  
-
-En resumen, automatizar vale la pena en lo que es estable, rápido de ejecutar y útil a largo plazo. El resto conviene revisarlo manualmente.
+Automatizar tests no es un fin en sí mismo: conviene hacerlo cuando aporta verdadero valor. Un test automático es mas rápido de correr, involucra menos humanos (suele ser más barato) y provee regresión automátcamente. Pero si el test es complejo de ejecutar para una compuatdora, o si es dificil de mantener, las pruebas manuales pueden ser una mejor solución.
 
 <a id="independencia"></a>
 ## Independencia
@@ -132,7 +112,7 @@ Cuando se cumple este principio, los tests ofrecen resultados confiables y fáci
 <a id="unitarios"></a>
 ### Unitarios
 
-Los **tests unitarios** se concentran en la **unidad mínima de lógica**, como una función o un método.  
+Los **tests unitarios** se concentran en la **unidad mínima de lógica**, como una función o un método o una clase.  
 
 Su propósito es verificar que cada pieza del sistema hace exactamente lo que debería en aislamiento, sin depender de otros módulos.  
 
@@ -154,7 +134,7 @@ test('suma dos números', () => {
 
 Los **tests de integración** verifican que varios módulos funcionen bien en conjunto.
 
-Su propósito es detectar errores que no aparecen en unitarios, como datos mal formateados, dependencias incorrectas o respuestas que no cumplen el contrato esperado.  
+Su propósito es detectar errores que no aparecen en unitarios, y que están más relacionados con la colaboracieon de varios componentes  (como una transformación de datos entre dos componentes que no ocurre correctamente)
 
 Aunque son más lentos y costosos que los unitarios, aportan confianza en que las piezas, además de funcionar aisladas, también lo hacen cuando se combinan.  
 
@@ -169,6 +149,8 @@ test('GET /usuarios devuelve 200', async () => {
   expect(res.status).toBe(200);
 });
 ```
+
+Este test integra: Capa HTTP, Controladores, clases de dominio, DB, etc.
 
 <a id="funcionales"></a>
 ### Funcionales (o E2E)
