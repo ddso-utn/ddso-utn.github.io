@@ -60,11 +60,13 @@ Para organizarlos, conviene pensar en los distintos caminos de ejecución que un
 
 La base para definir qué caminos conviene probar son los **requerimientos**. Cada requisito debería derivar en al menos un caso de prueba.
 
-Para darles más orden distinguimos dos niveles:
+Podemos analizar nuestras pruebas en dos niveles:
 
-- **Clases de test:** agrupan conceptualmente las pruebas sobre una misma funcionalidad. Ejemplo: todos los tests de login.
+- **Casos de test:** Son pruebas concretas con entradas y expectativas determinadas. Ejemplo: Para probar que el sistema identifica a los usuarios mayores de edad correctamente, probamos con un usuario de 25 años.
 
-- **Casos de test:** son instancias concretas con entradas, acciones y expectativas. Ejemplo: “login con contraseña correcta concede acceso”.
+- **Clases de test:** Agrupan conceptualmente todas las pruebas posibles que validan un mismo escenario. Dados dos tests de la misma clase, estos son equivalentes (es decir, prueban lo mismo). Ejemplo: Para probar que el sistema identifica a los usuarios mayores de edad correctamente, podeos probar con un usuario de 25, 50 o 76 años. Cualesquiera de esos 3 *casos* de test, pertenecen a la misma *clase*
+
+En general, vamos a tender a no repetior demasiados casos dentro de una msima clase (usualmente haremos solo uno) 
 
 <a id="estructura"></a>
 ## Estructura
