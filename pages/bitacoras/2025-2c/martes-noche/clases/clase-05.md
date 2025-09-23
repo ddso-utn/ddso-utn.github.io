@@ -193,7 +193,7 @@ Cuando hablamos de distintos tipos de pruebas, nos preguntamos: **¿cuántas hac
 La pirámide de testing es una metáfora visual que responde justamente a eso, mostrando la proporción recomendada entre unitarios, integración y E2E.  
 
 <p align="center">
-  <img src="imagenes/piramide-testing.png" alt="Pirámide de testing" width="300"/>
+  <img src="{{site.baseurl}}/bitacoras/2025-2c/martes-noche/clases/imagenes/piramide-testing.png" alt="Pirámide de testing" width="300"/>
 </p>
 
 La **base más ancha** corresponde a los tests unitarios: rápidos y abundantes, son los que sostienen la suite.  
