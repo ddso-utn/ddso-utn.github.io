@@ -10,6 +10,8 @@ permalink: /bitacoras/2025-2c/martes-noche/clases/clase-06/
 
 **Fecha: 23 de Septiembre de 2025**
 
+[Link a la grabación de la clase](https://www.youtube.com/watch?v=eDh96fuPorE)
+
 # Resumen
 
 Hoy introdujimos el **modelo documental**, comparándolo con el relacional. Presentamos **MongoDB** como la base de datos documental que utilizaremos, junto con **Mongoose** como **ODM** para mapear objetos a documentos.
@@ -44,7 +46,7 @@ En esta materia utilizaremos **MongoDB** como base de datos.
 
 La principal característica de este modelo es su **flexibilidad**. No impone claves foráneas (**FKs**) ni estructuras rígidas. Esto permite **anidar documentos, incluir listas y modelar estructuras complejas dentro de un único registro**, siempre que resulte conveniente.  
 
-Ahora bien, esta flexibilidad también implica **menores controles de consistencia** en comparación con un modelo relacional. Muchas de las garantías habituales deben trasladarse a la aplicación y a sus reglas de negocio.
+Ahora bien, esta flexibilidad también implica **menores controles de consistencia** en comparación con un modelo relacional. Por eso, estas bases de datos se usan sobre todo en casos donde importa más la rapidez de acceso o manejar grandes volúmenes de datos que la consistencia estricta.
 
 Cada documento se identifica mediante un **ObjectID**, generado automáticamente por MongoDB de forma única.
 
@@ -129,13 +131,13 @@ En este escenario, cada producto se maneja de forma independiente, puede reutili
 <a id="criterio-eleccion"></a>
 ### Criterio de elección
 
-La elección entre **embeber** o **referenciar** depende del caso:
+La decisión entre **embeber** o **referenciar** depende de cómo se relacionen los datos y de las necesidades de la aplicación.
 
-- Si los objetos **no viven de forma independiente**, embeberlos evita consultas adicionales y simplifica el modelo.
+- Si los objetos **no viven de forma independiente**, embeberlos simplifica el modelo y mejora la performance al evitar consultas adicionales.
 
-- Si requieren **identidad, trazabilidad o reutilización**, conviene almacenarlos como documentos separados y vincularlos por su **ObjectID**.  
+- Si, en cambio, requieren **identidad propia, trazabilidad o reutilización**, conviene guardarlos como documentos separados y referenciarlos, aunque esto implique más consultas para mantener la consistencia.
 
-En definitiva, apliquen la complejidad solo cuando aporta valor real al modelo y a las consultas de la aplicación.
+En definitiva, se trata de encontrar el **equilibrio entre performance y consistencia**, aplicando mayor complejidad solo cuando realmente aporta valor al modelo.
 
 <a id="asincronismo-js"></a>
 ## Asincronismo en JavaScript
@@ -150,7 +152,7 @@ En **JavaScript**, durante ese tiempo no se bloquea el hilo principal: el lengua
 <a id="callbacks"></a>
 ### Callbacks
 
-Históricamente, el asincronismo se resolvía mediante **callbacks**, funciones que se ejecutan cuando el resultado estaba disponible.  
+Originalmente, el asincronismo se resolvía mediante **callbacks**, funciones que se ejecutan cuando el resultado estaba disponible.  
 
 Ejemplo con callback:
 
@@ -190,7 +192,7 @@ En este ejemplo, `.then()` se ejecuta cuando la caja ya está llena, es decir, c
 <a id="uso-async-await"></a>
 ### Uso de `async/await`
 
-El uso de `async/await` es un **azúcar sintáctico** sobre las *promises*.
+El uso de `async/await` es un **syntax sugar** sobre las *promises*.
 
 Permite escribir código con una apariencia secuencial, aunque internamente sigue siendo asincrónico.  
 
@@ -210,9 +212,9 @@ async function main() {
 <a id="inyeccion-dependencias"></a>
 ## Inyección de dependencias
 
-Nuestros **controllers**, **services** y **repositories** necesitan conocerse de manera controlada. Para eso usamos **inyección de dependencias**. La idea es simple: cada objeto recibe lo que necesita a través del constructor u otro mecanismo, en lugar de crearlo por su cuenta.
+Nuestros **controllers**, **services** y **repositories** necesitan conocerse de manera controlada. Para eso usamos **inyección de dependencias**. 
 
-En Java o en frameworks como **Spring Boot** esto se resuelve con contenedores de inversión de control. 
+La idea es simple: cada objeto recibe lo que necesita a través del **constructor** o de **setters**, en lugar de obtenerlo por su cuenta (creándolo, utilizando un *Singleton*, etc.).
 
 En este curso vamos a hacerlo a mano con un **app context** sencillo: instanciamos cada clase y pasamos las dependencias por constructor. Es suficiente para nuestros proyectos y mantiene el acoplamiento bajo.
 
@@ -240,14 +242,14 @@ const service = new Service(repo)
 const controller = new Controller(service)
 ```
 
-Este esquema facilita los tests y permite reemplazar dependencias por dobles o mocks cuando haga falta.
+Este esquema facilita los tests y permite reemplazar dependencias por mocks cuando haga falta.
 
 <a id="db-vs-rest"></a>
 ## DB vs REST: Separando responsabilidades
 
 En una aplicación distinguimos tres tipos de objetos:
 
-- **DTOs (Data Transfer Objects)**: objetos planos que solo trasladan información.  
+- **DTOs (Data Transfer Objects)**: representaciones planas de los datos usadas para la comunicación con el exterior (por ejemplo, en las peticiones y respuestas HTTP).
 - **Entidades de dominio**: representan las reglas de negocio y sus validaciones.
 - **Entidades de persistencia**: definen cómo se almacenan los datos en la base de datos.  
 
@@ -257,9 +259,9 @@ Aunque en algunos casos puedan parecer similares en estructura, **no cumplen el 
 
 Ahora bien, cada capa trabaja con un tipo de objeto específico:
 
-- El **controller** recibe DTOs de entrada y devuelve DTOs de salida.  
-- El **service** opera con entidades de dominio y transforma los resultados en DTOs.  
-- El **repository** persiste entidades de persistencia y devuelve entidades de dominio ya construidas.  
+- La **capa de presentación** recibe representaciones externas (en nuestro caso, **DTOs**) y las transforma en objetos de dominio, y viceversa.
+- La **capa de dominio** aplica las reglas de negocio sobre esas entidades.
+- La **capa de persistencia** se encarga de almacenar y recuperar los datos, traduciendo entre entidades de dominio y representaciones de base de datos.
 
 ---
 
