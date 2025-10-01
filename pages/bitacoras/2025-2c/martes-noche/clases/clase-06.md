@@ -61,9 +61,13 @@ Este enfoque es análogo al de un **ORM** (*Object Relational Mapper*) en bases 
 <a id="modelado-objetos"></a>
 ## 🧩 Modelado de objetos
 
+El modelado de objetos en bases de datos documentales sebasa en varios patrones de distinta complejidad que son diferentes de aquellos usados en las bases de datos relacionales, ya que en el modelo Documental tenemos reglas diferentes, como poder anidar objetos o tener atributos multivaluados, que nos evitan tener que modelar toda relación como FKs
+
+Si bien no haremos una análisis exhaustivo de todas las posibilidades, presentaremos un ejemplo representativo de varios casos comunes y estableceremos un criterio general que nos ayudará de forma orientativa:
+
 Imaginemos una clase `Pedido` que contiene una lista de `Producto`. Ahora nos preguntamos: **¿cómo representamos esta relación en una base documental?**
 
-Existen dos opciones, **embeber** o **referenciar** objetos. Veamos cómo sería:
+Podemos pensar, en principio, dos opciones: **embeber** o **referenciar** objetos. Veamos cómo sería:
 
 ---
 <a id="objetos-embebidos"></a>
@@ -129,15 +133,15 @@ En este escenario, cada producto se maneja de forma independiente, puede reutili
 
 ---
 <a id="criterio-eleccion"></a>
-### Criterio de elección
+### Criterio orientativo
 
-La decisión entre **embeber** o **referenciar** depende de cómo se relacionen los datos y de las necesidades de la aplicación.
+Una forma de encarar la decisión entre **embeber** o **referenciar** es pensand cómo se relacionen los datos y de las necesidades de la aplicación.
 
 - Si los objetos **no viven de forma independiente**, embeberlos simplifica el modelo y mejora la performance al evitar consultas adicionales.
 
 - Si, en cambio, requieren **identidad propia, trazabilidad o reutilización**, conviene guardarlos como documentos separados y referenciarlos, aunque esto implique más consultas para mantener la consistencia.
 
-En definitiva, se trata de encontrar el **equilibrio entre performance y consistencia**, aplicando mayor complejidad solo cuando realmente aporta valor al modelo.
+Como resumen, podemos recir que siempre apuntremos a encontrar el **equilibrio entre performance y consistencia**, tendiendo a preferir soluciones basadas en mayor anidamiento cuando sea posible (pues hacen a la extracción de datos más simple y veloz) y aplicando modelos más complejos y basados en referencias cuando esto sea necesario o aporte beneficios tangibles en términos de consistencia.
 
 <a id="asincronismo-js"></a>
 ## Asincronismo en JavaScript
@@ -164,7 +168,7 @@ function obtenerDato(callback) {
 obtenerDato(dato => console.log(dato))
 ```
 
-Si bien funcionan para operaciones simples, encadenar múltiples callbacks dificulta la lectura y el manejo de errores.
+Si bien funcionan para operaciones simples, encadenar múltiples callbacks dificulta la lectura y el manejo de errores, pues genera mucho anidamiento e indentación.
 
 ---
 <a id="promises"></a>
@@ -186,7 +190,7 @@ function obtenerDato() {
 obtenerDato().then(dato => console.log(dato))
 ```
 
-En este ejemplo, `.then()` se ejecuta cuando la caja ya está llena, es decir, cuando la promesa se resuelve.
+En este ejemplo, `.then()` se ejecuta cuando la caja ya está llena, es decir, cuando la promesa se resuelve. La ejecuíon de un `then` devuelve una nueva promesa con el resultado de ejecutar el callback pasado, con lo cual nos permite encadenar varios then (con varios callbacks) sin tener que anidarlos, facilitando la lecutra.
 
 ---
 <a id="uso-async-await"></a>
@@ -194,7 +198,7 @@ En este ejemplo, `.then()` se ejecuta cuando la caja ya está llena, es decir, c
 
 El uso de `async/await` es un **syntax sugar** sobre las *promises*.
 
-Permite escribir código con una apariencia secuencial, aunque internamente sigue siendo asincrónico.  
+Permite escribir código con una apariencia secuencial, aunque internamente sigue siendo asincrónico (por dento, se siguen devolviendo promises y se siguen aplicando `then`s).  
 
 El operador `await` puede leerse como “ver el contenido de la caja cuando esté listo, sin bloquear el hilo principal”.
 
@@ -208,6 +212,7 @@ async function main() {
 > **Regla**: cualquier función que use `await` debe declararse con `async`. 
 
 > **Observación**: Si una función solo retorna una promesa sin usar `await`, no es necesario marcarla como `async`.
+> **Observación**: Si una función realiza un `await` y retorna el valor sin utilizarlo después, esa función debería retornar la promesa directamente y no utilizar `async/await`.
 
 <a id="inyeccion-dependencias"></a>
 ## Inyección de dependencias
@@ -216,7 +221,7 @@ Nuestros **controllers**, **services** y **repositories** necesitan conocerse de
 
 La idea es simple: cada objeto recibe lo que necesita a través del **constructor** o de **setters**, en lugar de obtenerlo por su cuenta (creándolo, utilizando un *Singleton*, etc.).
 
-En este curso vamos a hacerlo a mano con un **app context** sencillo: instanciamos cada clase y pasamos las dependencias por constructor. Es suficiente para nuestros proyectos y mantiene el acoplamiento bajo.
+Ok, los componentes reciben sus dependencias desde afuera... Y quién se las pasa? Bueno, una forma muy simple es hacerlo a mano con un **app context** sencillo: instanciamos cada clase y pasamos las dependencias por constructor. Es suficiente para nuestros proyectos y mantiene el acoplamiento bajo. En proyectos más complejos, que necesiten manejar dependencias de forma dinámica (por ejemplo, en frameworks creados para terceros) se pueden aplicar patrones mas sofisticados y genéricos, como la idea de Service Locator.
 
 ```js
 // En Repository.js
@@ -249,7 +254,7 @@ Este esquema facilita los tests y permite reemplazar dependencias por mocks cuan
 
 En una aplicación distinguimos tres tipos de objetos:
 
-- **DTOs (Data Transfer Objects)**: representaciones planas de los datos usadas para la comunicación con el exterior (por ejemplo, en las peticiones y respuestas HTTP).
+- **Entidades de HTTP**: representaciones planas de los datos usadas para la comunicación con el exterior (por ejemplo, en las peticiones y respuestas HTTP).
 - **Entidades de dominio**: representan las reglas de negocio y sus validaciones.
 - **Entidades de persistencia**: definen cómo se almacenan los datos en la base de datos.  
 
@@ -263,13 +268,15 @@ Ahora bien, cada capa trabaja con un tipo de objeto específico:
 - La **capa de dominio** aplica las reglas de negocio sobre esas entidades.
 - La **capa de persistencia** se encarga de almacenar y recuperar los datos, traduciendo entre entidades de dominio y representaciones de base de datos.
 
+> **Observación**: A los objetos que se utilizan para intercambiar datos entre diferentes capas o componentes (como entre la capa de presentación y la de dominio, o la de dominio y la de persistencia) se los conoce como Data Transfer Object (**DTO**)
+
 ---
 
 En **JavaScript**, este error de mezclar responsabilidades es particularmente común porque, al no ser tipado, resulta muy fácil “reciclar” objetos entre capas. 
 
 Por ejemplo, si recibo un DTO muy parecido al objeto que persisto, *¿por qué no mandarlo directo al repository o usarlo tal cual en el service?*
 
-Si bien a simple vista esto parece algo práctico, la realidad es que se va a generar una deuda técnica: tarde o temprano le faltarán métodos y nos hará ruido.
+Si bien a simple vista esto parece algo práctico, la realidad es que probablemente vaya a generar una deuda técnica: tarde o temprano le faltarán métodos y nos obligará a agregarle comportamiento desde afuera, rompiendo el paradigma OO.
 
-A modo de síntesis, aunque los objetos puedan parecerse, **no son intercambiables**. Respetar la separación de responsabilidades nos permite tener un diseño limpio y extensible.
+A modo de síntesis, aunque los objetos puedan parecerse, en general **no son intercambiables**. Respetar la separación de responsabilidades nos permite tener un diseño limpio y extensible. (Obviamente, siempre pueden existir excepciones en casos concretos dodne peuda hacerse una reutilización en ese sentido, pero son muy, muy poco fercuentes)
 
