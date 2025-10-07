@@ -15,3 +15,4 @@ Cada enlace te lleva a lo visto y lo que hay que ver antes de la siguiente clase
 - [Clase 3: Backend Parte I]({{site.baseurl}}/bitacoras/2025-2c/martes-noche/clases/clase-03)
 - [Clase 4: Backend Parte II]({{site.baseurl}}/bitacoras/2025-2c/martes-noche/clases/clase-04)
 - [Clase 5: Testing]({{site.baseurl}}/bitacoras/2025-2c/martes-noche/clases/clase-05)
+- [Clase 7: Introducción a Frontend]({{site.baseurl}}/bitacoras/2025-2c/martes-noche/clases/clase-07)
