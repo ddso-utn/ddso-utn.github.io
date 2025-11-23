@@ -8,7 +8,15 @@ permalink: /bitacoras/2025-2c/jueves-manana/clase-10/
 # Temario
 
  * Despliegue. Conceptos de infraestructura
- * CI/CD. Contenedores. Dockerización
+    * Tipos de infraestuctura:
+      - ☁ Nube. Modalidades IaaS / SaaS / PaaS
+      - ❄️⚖️⚡🛡️ Centro de cómputo privado
+      - 💻 Bare Metal ("fierro pelado")
+    * Procesos de construcción:
+        * Build local
+        * Build en CI
+        * Build en el servidor
+ * Contenedores. Dockerización
  * Proceso de Release
 
 # Resumen de clase
@@ -17,7 +25,7 @@ permalink: /bitacoras/2025-2c/jueves-manana/clase-10/
 
 En esta clase hablamos sobre la necesidad de desplegar nuestras aplicaciones fuera del contexto de nuestras propias computadoras de desarrollo: si queremos que nuestro sistema quede disponible para cualquier persona en internet, comúnmente vamos a necesitar colocarlo en un nodo servidor accesible desde cualquier lugar en internet.
 
-Este nodo (o nodos) deberá poder estar disponible las 24 horas del día, todos día del año. Si bien es posible hacer esto desde infraestructura completamente propia (ya sea utilizando nuestra computadora de escritorio, una computadora dedicada en nuestro hogar u oficina o un centro de cómputos (_data center_) propio o alquilado en el que tengamos un cierto grado de control de los procesos físicos que allí ocurren), existen múltiples motivos para hacerlo en infraestructura virtualizada y arrendada en la nube, en la modalidad IaaS (todo esto se desarrolla más en DDSI).
+Este nodo (o nodos) deberá poder estar disponible las 24 horas del día, todos día del año. Si bien es posible hacer esto desde infraestructura completamente propia (ya sea utilizando nuestra computadora de escritorio, una computadora dedicada en nuestro hogar u oficina o un centro de cómputos (_data center_) propio o alquilado en el que tengamos un cierto grado de control de los procesos físicos que allí ocurren), existen múltiples motivos para hacerlo en infraestructura virtualizada y arrendada en la nube (todo esto se desarrolla más en DDSI).
 
 Tanto si contamos una infraestructura propia como sobre todo si utilizamos una infraestructura alquilada en la nube, nos interesará hacer al proceso de despliegue lo más repetible posible. De ahí que es común utilizar técnicas de virtualización en el proceso de despliegue, para buscar el entorno en que ejecuta el software sea lo mas homogéneo posible. Docker es una de ellas, y se basa en la idea de contenedores.
 
@@ -93,8 +101,28 @@ EXPOSE 8080
 
  * Mencionamos que es usual que para garantizar la calidad del software, validemos que el software puede ser construido (y que sus pruebas automatizadas pueden ser ejecutadas) utilizando un sistema de integración continua (_CI_). Ocasionalmente podemos configurar a estos sistemas para que asistan en el proceso de despliegue ya sea poniendo en producción automáticamente toda versión nueva (_CD_), versiones específicas que sigan un cierto patrón (por ejemplo, _tags_) o que construyan las imágenes Docker y las suban a un registro para que puedan ser desplegadas de forma manual mas adelante.
 
+
+### Procesos de despliegue
+
+Más allá de si utilizamos o no docker, de alguna forma el servidor tiene que detectar una nueva versión de la imágen,, del código fuente o de los ejecutables compilados y empaquetados. Ante dicho evento, debe detener el proceso servidor corriendo actualmente y reemplazarlo por un nuevo proceso.
+
+Este proceso puede ser:
+   - completamente manual, ingresando por ssh, ejecutando comandos directamente y dejando el software corriendo disociado del proceso ssh mediante algún comando como screen o nohup.
+   - de forma automática o semiautomática: utilizando scripts, programas y/o servicios instalados en el servidor y/o la máquina de desarrollo y/o el CI que resuelvan esas tareas de forma repetible.
+
+
+### Arquitectura de despliegue
+
+Por último, conversamos sobre cómo los componentes de frontend y backed se despliegan a través del cliente y del servidor.
+
+- Servidor: Software de red. Proceso de larga vida que se ejecuta en el nodo homónimo (el nodo servidor)
+- Cliente:
+    - desde el punto de vista del despliegue es un recurso estático, no es software "vivo". La pregunta es desde donde se sirve, es decir, desde dónde se permite la descarga de ese paquete 📦: ¿Desde el servidor principal? ¿Desde un servidor dedicado? ¿Desde una red de servidores dedicados (CDN)?
+     - desde el punto de vista de le usuarie, hay N instancias de ese software corriendo, una en cada dispositivo físico, navegador y solapa que tenga cargada la aplicación web.
+
+
 # Material
 
 * [Presentación Docker](https://docs.google.com/presentation/d/12N1BJhtlOYgTFzp3DP6Rl9xJQEZ2aN0qzf4O2H0KHKc/edit?slide=id.p7#slide=id.p7)
-* [Apunte Docker](https://docs.google.com/document/d/16-ZVmZQrCbFDDnEyI8eABSp2rwsw3bz1WYyJ7DM9Rxw/edit?tab=t.0)
-* [Otro apunte de Docker](https://docs.google.com/document/d/1xYF69TcGLIcQ3_fJnO7zUet6c5ud1zlFuinaRfNC3rU/edit?tab=t.0)
+* [Apunte (principal) de Docker](https://docs.google.com/document/d/1xYF69TcGLIcQ3_fJnO7zUet6c5ud1zlFuinaRfNC3rU/edit?tab=t.0)
+* [Apunte (complementario) Docker](https://docs.google.com/document/d/16-ZVmZQrCbFDDnEyI8eABSp2rwsw3bz1WYyJ7DM9Rxw/edit?tab=t.0)
