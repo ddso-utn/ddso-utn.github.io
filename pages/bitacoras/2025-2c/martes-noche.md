@@ -18,4 +18,5 @@ Cada enlace te lleva a lo visto y lo que hay que ver antes de la siguiente clase
 - [Clase 6: ODM]({{site.baseurl}}/bitacoras/2025-2c/martes-noche/clases/clase-06)
 - [Clase 7: Introducción a Frontend]({{site.baseurl}}/bitacoras/2025-2c/martes-noche/clases/clase-07)
 - [Clase 8: Introducción a la UI Client-Side]({{site.baseurl}}/bitacoras/2025-2c/martes-noche/clases/clase-08)
+- [Clase 9: Componentes de UI]({{site.baseurl}}/bitacoras/2025-2c/martes-noche/clases/clase-09)
 
