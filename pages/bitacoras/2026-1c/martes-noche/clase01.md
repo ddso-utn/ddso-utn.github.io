@@ -18,10 +18,13 @@ Si bien está pensado para que puedas seguir lo visto estés donde estés, es im
 
  * Rodolfo Caputo (rodcap.93@gmail.com)
  * Jessica Saavedra (jessicasaavedraval@gmail.com)
- * Lucas Schvartzman
+ * Nicolás Kalaydjian
  * Lucas Aponte
  * Gabriel Litwin
- * Nicolás Kalaydjian
+ * Luciana Szwimer
+ * Ornela Lugo Aquino
+ * Tomás Bertella
+ * Gonzalo García Fontenla
 
 # Resumen
 
@@ -38,10 +41,10 @@ En esta clase hablamos de:
 - 1 parcial por cuatrimestre
 
 ### Trabajo Práctico (TP)
-- 1 TP con 4 entregas
+- 1 TP con ~4 entregas
 - Hasta 1 solo "M" (M es básicamente porque no hicieron nada)
 - TBD en las próximas semanas
-- Grupos de 4/5 personas (TBD)
+- Grupos de 7 personas 
 
 ### Tecnologías
 - Node + JS

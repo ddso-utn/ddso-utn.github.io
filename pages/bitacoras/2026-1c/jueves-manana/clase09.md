@@ -33,7 +33,7 @@ Hay componentes con los que podemos interactuar y desencadenar una acción puntu
 
 ### Situación del sistema científico universitario
 
-Luego conversamos sobre la [situación universitaria](https://www.cin.edu.ar/en-el-problema-universitario-esta-en-juego-el-futuro-de-la-nacion/) y [científica actual](https://www.cin.edu.ar/sin-respuesta-ni-plan-para-la-ciencia-del-pais/), [la movilización convocada para esta semana](https://www.infobae.com/educacion/2026/06/23/las-universidades-publicas-se-movilizan-el-jueves-en-todo-el-pais-para-reclamar-por-la-ley-de-financiamiento-y-habra-paro-docente/) y [la ley de financiamiento universitario](https://www.cin.edu.ar/hacia-un-nuevo-proyecto-de-ley-de-financiamiento-universitario/) y [la convocatoria para apoyar a la misma](https://www.cin.edu.ar/yo-apoyo-la-ley-de-financiamiento-universitario/)
+Luego conversamos sobre la [situación universitaria](https://www.cin.edu.ar/en-el-problema-universitario-esta-en-juego-el-futuro-de-la-nacion/) y [científica actual](https://www.cin.edu.ar/sin-respuesta-ni-plan-para-la-ciencia-del-pais/), [la movilización convocada para esta semana](https://www.infobae.com/educacion/2025/06/23/las-universidades-publicas-se-movilizan-el-jueves-en-todo-el-pais-para-reclamar-por-la-ley-de-financiamiento-y-habra-paro-docente/) y [la ley de financiamiento universitario](https://www.cin.edu.ar/hacia-un-nuevo-proyecto-de-ley-de-financiamiento-universitario/) y [la convocatoria para apoyar a la misma](https://www.cin.edu.ar/yo-apoyo-la-ley-de-financiamiento-universitario/)
 
 
 ### Pruebas E2E

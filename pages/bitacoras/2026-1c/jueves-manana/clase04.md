@@ -395,7 +395,7 @@ docker run --rm -it -v "$(pwd)/tmp":/tmp/kommanda --name mongo-kommanda -p 27017
   * [Código sin persistencia](https://github.com/ddso-utn/kommanda/tree/clase-odm-inicial)
   * [Código con persistencia](https://github.com/ddso-utn/kommanda/tree/clase-odm-repos)
   * [Datos de ejemplo](https://gist.github.com/flbulgarelli/0cfb4e0557f3d003c107f21f7345e2ee)
-
+ 
 
 # Tarea
 

@@ -3,16 +3,14 @@ layout: page
 title: Jueves
 description: Turno Noche - 2026 - Primer Cuatrimestre
 permalink: /bitacoras/2026-1c/jueves-manana/
-frame: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQf0WtS0Ut0gvLgxWJwb33tRBHOVKPhjT4bmest-MwOC1J85THVAOCR9Q9tnI7O6c-FzwGCEGmHS0H8/pubhtml?gid=0&single=true"
+frame: "https://docs.google.com/spreadsheets/d/e/2PACX-1vSeq0x8tWvWNh7k-QgLTKuZ8pjpMf1y-PqFcKyqNSGzFgMEwdtFN_i53JArx1BWmYbeWxZRD5SIXZuR/pubhtml?gid=0&single=true"
+
 ---
-
-
 
 ## Clases
 
 Cada enlace te lleva a lo visto y lo que hay que ver antes de la siguiente clase.
 
-- Clase 0: Presentación de la materia y visibilización de la crisis del financiamiento universitario
 - [Clase 1: Arquitectura Centralizadas y Distribuidas]({{site.baseurl}}/bitacoras/2026-1c/jueves-manana/clase-01)
 - [Clase 2: HTTP y Arquitectura Web]({{site.baseurl}}/bitacoras/2026-1c/jueves-manana/clase-02)
 - [Clase 3: REST y Desarrollo Backend]({{site.baseurl}}/bitacoras/2026-1c/jueves-manana/clase-03)
