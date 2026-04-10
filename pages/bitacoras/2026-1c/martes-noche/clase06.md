@@ -2,13 +2,13 @@
 layout: page
 title: Clase 6
 description: Martes Noche, 2026, Primer Cuatrimestre
-permalink: /bitacoras/2026-1c/martes-noche/clases/clase-06/
+permalink: /bitacoras/2026-1c/martes-noche/clase-06/
 ---
 
 # Clase N°6: ODM
 *Desarrollo de Software K3552 (Martes Noche)*
 
-**Fecha: 23 de Septiembre de 2026**
+**Fecha: 23 de Septiembre de 2025**
 
 [Link a la grabación de la clase](https://www.youtube.com/watch?v=eDh96fuPorE)
 
@@ -16,7 +16,7 @@ permalink: /bitacoras/2026-1c/martes-noche/clases/clase-06/
 
 Hoy introdujimos el **modelo documental**, comparándolo con el relacional. Presentamos **MongoDB** como la base de datos documental que utilizaremos, junto con **Mongoose** como **ODM** para mapear objetos a documentos.
 
-Además, repasamos el **asincronismo en JavaScript**, incluyendo el event loop, las promises y el uso de `async/await`.
+Además, repasamos el **asincronismo en JavaScript**, incluyendo el event loop, las promises y el uso de `async/await`. 
 
 Finalmente, revisamos de manera sencilla la **inyección de dependencias** y la importancia de mantener una clara separación entre **DTOs, entidades de dominio y entidades de persistencia**.
 
@@ -38,13 +38,13 @@ Finalmente, revisamos de manera sencilla la **inyección de dependencias** y la 
 <a id="introduccion"></a>
 ## 📄 Introducción: Modelo documental
 
-El **modelo documental** forma parte de la familia **NoSQL**. A diferencia de los sistemas relacionales, que se basan en tablas y filas, acá trabajamos con **documentos**, cuya estructura se asemeja a objetos **JSON**.
+El **modelo documental** forma parte de la familia **NoSQL**. A diferencia de los sistemas relacionales, que se basan en tablas y filas, acá trabajamos con **documentos**, cuya estructura se asemeja a objetos **JSON**.  
 
-En esta materia utilizaremos **MongoDB** como base de datos.
+En esta materia utilizaremos **MongoDB** como base de datos.  
 
 > **Nota**: MongoDB no almacena exactamente JSON, sino **BSON** (*Binary JSON*), un formato binario optimizado para el procesamiento y almacenamiento eficiente de datos.
 
-La principal característica de este modelo es su **flexibilidad**. No impone claves foráneas (**FKs**) ni estructuras rígidas. Esto permite **anidar documentos, incluir listas y modelar estructuras complejas dentro de un único registro**, siempre que resulte conveniente.
+La principal característica de este modelo es su **flexibilidad**. No impone claves foráneas (**FKs**) ni estructuras rígidas. Esto permite **anidar documentos, incluir listas y modelar estructuras complejas dentro de un único registro**, siempre que resulte conveniente.  
 
 Ahora bien, esta flexibilidad también implica **menores controles de consistencia** en comparación con un modelo relacional. Por eso, estas bases de datos se usan sobre todo en casos donde importa más la rapidez de acceso o manejar grandes volúmenes de datos que la consistencia estricta.
 
@@ -52,7 +52,7 @@ Cada documento se identifica mediante un **ObjectID**, generado automáticamente
 
 ### ODM
 
-Un **ODM** (*Object Document Mapper*) tiene como objetivo **mapear los objetos de la aplicación a documentos de la base de datos**, reduciendo el *impedance mismatch* entre ambos mundos.
+Un **ODM** (*Object Document Mapper*) tiene como objetivo **mapear los objetos de la aplicación a documentos de la base de datos**, reduciendo el *impedance mismatch* entre ambos mundos.  
 
 > En nuestro caso, podemos utilizar [**Mongoose**](https://mongoosejs.com/).
 
@@ -148,7 +148,7 @@ Como resumen, podemos recir que siempre apuntremos a encontrar el **equilibrio e
 
 El acceso a una base de datos u otras operaciones de **I/O** lleva tiempo.
 
-En **JavaScript**, durante ese tiempo no se bloquea el hilo principal: el lenguaje se ejecuta sobre un **event loop** de un único hilo (**single-threaded**) y delega las operaciones de I/O para que la ejecución continúe sin interrupciones.
+En **JavaScript**, durante ese tiempo no se bloquea el hilo principal: el lenguaje se ejecuta sobre un **event loop** de un único hilo (**single-threaded**) y delega las operaciones de I/O para que la ejecución continúe sin interrupciones.  
 
 > **Analogía**: Esto se parece a los **ULT (User-Level Threads)** en Sistemas Operativos: parece que hay muchas tareas en paralelo, pero en realidad se planifican sobre un solo hilo.
 
@@ -156,7 +156,7 @@ En **JavaScript**, durante ese tiempo no se bloquea el hilo principal: el lengua
 <a id="callbacks"></a>
 ### Callbacks
 
-Originalmente, el asincronismo se resolvía mediante **callbacks**, funciones que se ejecutan cuando el resultado estaba disponible.
+Originalmente, el asincronismo se resolvía mediante **callbacks**, funciones que se ejecutan cuando el resultado estaba disponible.  
 
 Ejemplo con callback:
 
@@ -198,7 +198,7 @@ En este ejemplo, `.then()` se ejecuta cuando la caja ya está llena, es decir, c
 
 El uso de `async/await` es un **syntax sugar** sobre las *promises*.
 
-Permite escribir código con una apariencia secuencial, aunque internamente sigue siendo asincrónico (por dento, se siguen devolviendo promises y se siguen aplicando `then`s).
+Permite escribir código con una apariencia secuencial, aunque internamente sigue siendo asincrónico (por dento, se siguen devolviendo promises y se siguen aplicando `then`s).  
 
 El operador `await` puede leerse como “ver el contenido de la caja cuando esté listo, sin bloquear el hilo principal”.
 
@@ -209,7 +209,7 @@ async function main() {
 }
 ```
 
-> **Regla**: cualquier función que use `await` debe declararse con `async`.
+> **Regla**: cualquier función que use `await` debe declararse con `async`. 
 
 > **Observación**: Si una función solo retorna una promesa sin usar `await`, no es necesario marcarla como `async`.
 > **Observación**: Si una función realiza un `await` y retorna el valor sin utilizarlo después, esa función debería retornar la promesa directamente y no utilizar `async/await`.
@@ -217,7 +217,7 @@ async function main() {
 <a id="inyeccion-dependencias"></a>
 ## Inyección de dependencias
 
-Nuestros **controllers**, **services** y **repositories** necesitan conocerse de manera controlada. Para eso usamos **inyección de dependencias**.
+Nuestros **controllers**, **services** y **repositories** necesitan conocerse de manera controlada. Para eso usamos **inyección de dependencias**. 
 
 La idea es simple: cada objeto recibe lo que necesita a través del **constructor** o de **setters**, en lugar de obtenerlo por su cuenta (creándolo, utilizando un *Singleton*, etc.).
 
@@ -256,7 +256,7 @@ En una aplicación distinguimos tres tipos de objetos:
 
 - **Entidades de HTTP**: representaciones planas de los datos usadas para la comunicación con el exterior (por ejemplo, en las peticiones y respuestas HTTP).
 - **Entidades de dominio**: representan las reglas de negocio y sus validaciones.
-- **Entidades de persistencia**: definen cómo se almacenan los datos en la base de datos.
+- **Entidades de persistencia**: definen cómo se almacenan los datos en la base de datos.  
 
 Aunque en algunos casos puedan parecer similares en estructura, **no cumplen el mismo rol**.
 
@@ -272,10 +272,11 @@ Ahora bien, cada capa trabaja con un tipo de objeto específico:
 
 ---
 
-En **JavaScript**, este error de mezclar responsabilidades es particularmente común porque, al no ser tipado, resulta muy fácil “reciclar” objetos entre capas.
+En **JavaScript**, este error de mezclar responsabilidades es particularmente común porque, al no ser tipado, resulta muy fácil “reciclar” objetos entre capas. 
 
 Por ejemplo, si recibo un DTO muy parecido al objeto que persisto, *¿por qué no mandarlo directo al repository o usarlo tal cual en el service?*
 
 Si bien a simple vista esto parece algo práctico, la realidad es que probablemente vaya a generar una deuda técnica: tarde o temprano le faltarán métodos y nos obligará a agregarle comportamiento desde afuera, rompiendo el paradigma OO.
 
 A modo de síntesis, aunque los objetos puedan parecerse, en general **no son intercambiables**. Respetar la separación de responsabilidades nos permite tener un diseño limpio y extensible. (Obviamente, siempre pueden existir excepciones en casos concretos dodne peuda hacerse una reutilización en ese sentido, pero son muy, muy poco fercuentes)
+
