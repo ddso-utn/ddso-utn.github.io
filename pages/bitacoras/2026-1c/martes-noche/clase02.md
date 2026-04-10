@@ -9,7 +9,7 @@ permalink: /bitacoras/2026-1c/martes-noche/clase-02/
 *Desarrollo de Software (Martes Noche)*
 
 # Resumen
-Esta clase hablamos de Arquitectura de Software, cuáles son los esquemas más comunes y qué restricciones nos impone la tecnología. Aparte, respondimos consultas sobre Git y enviamos un video sobre Cualidades de Diseño 
+Esta clase hablamos de Arquitectura de Software, cuáles son los esquemas más comunes y qué restricciones nos impone la tecnología. Aparte, respondimos consultas sobre Git y enviamos un video sobre Cualidades de Diseño. También introdujimos el uso de IA en el desarrollo de software: herramientas disponibles, criterios para delegar o guiar su uso, y cómo aplicarlas en el trabajo práctico.
 
 ## 📑 Arquitectura y DDS: Índice
 
@@ -34,6 +34,7 @@ Esta clase hablamos de Arquitectura de Software, cuáles son los esquemas más c
 	- [Qué hace el servidor](#rol-servidor)
 	- [Qué hace el cliente](#rol-cliente)
 - [Conclusión](#conclusion)
+- 🤖 [IA y Desarrollo de Software](#ia-desarrollo)
 
 <a id="introduccion"></a>
 ## Introducción
@@ -363,6 +364,52 @@ Adoptaremos el modelo de **cliente pesado**, en el cual la lógica de presentaci
 El primer paso será diseñar y construir una **API REST**, encargada de exponer los recursos y la lógica de negocio en formato **JSON**.
 
 Posteriormente, esa API será consumida desde el frontend, que procesará los datos y generará la interfaz de usuario con la que interactuarán directamente.
+
+<a id="ia-desarrollo"></a>
+## 🤖 IA y Desarrollo de Software
+
+Este año los modelos de IA son notablemente más capaces y están mejor integrados con los IDEs. Generan código imperfecto pero muy útil, y tanto docentes como estudiantes seguimos aprendiendo a usarlos. No habrá contenido estructurado sobre el tema en la materia, pero sí tips y observaciones orgánicas.
+
+### Herramientas
+
+- **Claude Code**, **Cursor**, plugins de VS Code
+- **GitHub Copilot** (probablemente la más accesible para ustedes)
+- Evitar el ciclo browser + copy-paste: hay mejores flujos
+
+### Modelos
+
+Claude, GPT/Codex, Gemini, entre otros. El ecosistema cambia rápido; iremos compartiendo lo que encontremos y esperamos que ustedes también hagan lo mismo.
+
+### Qué delegar y qué guiar
+
+Una heurística útil (desde la perspectiva de alguien con experiencia):
+
+- **Delegar**: tareas repetitivas, aburridas, que no aportan aprendizaje nuevo.
+- **Guiar**: decisiones de diseño, lógica de dominio, cualquier cosa donde todavía estás aprendiendo.
+
+> Si no estás seguro de que algo es fácil y repetitivo, probablemente todavía necesites hacerlo más a mano.
+
+Revisá siempre el output como si fuera el PR de un compañero: el 80% suele estar bien, pero el 20% restante puede acumular problemas. La IA a veces argumenta decisiones incorrectas con mucha confianza; dos segundos de revisión humana suelen alcanzar para detectarlas.
+
+### Formas de uso
+
+- **Conversación**: explorar código, pedir explicaciones, investigar.
+- **Edición directa**: con o sin confirmación de permisos; útil para iterar de a poco.
+- **Plan Mode**: para tareas más complejas, planifica antes de ejecutar.
+- Contexto y "memory files" (como `CLAUDE.md`) ayudan a no repetir instrucciones.
+
+### Uso en el TP
+
+Permitido y recomendado (limitado por los tokens disponibles). Sugerencia:
+
+1. Implementar una funcionalidad "modelo" a mano, siguiendo los principios de la materia.
+2. Luego enseñarle a la IA a replicar ese estilo para el resto.
+
+**Condición de aprobación**: poder explicar y defender el código, haber tomado las decisiones de diseño, no solo aceptado lo que la IA sugirió. Probablemente revisemos prompts y conversaciones como parte de la corrección.
+
+### Visión a futuro
+
+Los humanos seguirán siendo esenciales en niveles altos de diseño, coordinación y criterio. Las restricciones de contexto y memoria de los modelos, sumadas a la experiencia humana acumulada, marcan hoy la diferencia. Por ahora la IA está ampliando el mercado; hacia adelante, no sabemos.
 
 # Material
  - [Video de Cualidades de Diseño](https://drive.google.com/file/d/1enIq0az1Fx9dtB70GWRayN1i917yf5M6/view)
