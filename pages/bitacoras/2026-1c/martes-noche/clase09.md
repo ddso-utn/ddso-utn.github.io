@@ -6,9 +6,8 @@ permalink: /bitacoras/2026-1c/martes-noche/clase-09/
 ---
 
 # Clase N°9: Componentes de UI  
-*Desarrollo de Software K3552 (Martes Noche)*  
+*Desarrollo de Software (Martes Noche)*  
 
-**Fecha: 21 de Octubre de 2025**
 
 # Resumen
 

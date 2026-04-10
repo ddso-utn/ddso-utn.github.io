@@ -7,9 +7,8 @@ permalink: /bitacoras/2026-1c/martes-noche/clase-08/
 
 # Clase N°8: Introducción a la UI Client-Side
 
-*Desarrollo de Software K3552 (Martes Noche)*
+*Desarrollo de Software (Martes Noche)*
 
-**Fecha: 7 de Octubre de 2025**
 
 # Resumen
 

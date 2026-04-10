@@ -6,9 +6,8 @@ permalink: /bitacoras/2026-1c/martes-noche/clase-05/
 ---
 
 # Clase N°5: Testing
-*Desarrollo de Software K3552 (Martes Noche)*
+*Desarrollo de Software (Martes Noche)*
 
-**Fecha: 16 de Septiembre de 2025**
 
 # Resumen
 

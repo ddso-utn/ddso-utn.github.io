@@ -6,9 +6,8 @@ permalink: /bitacoras/2026-1c/martes-noche/clase-07/
 ---
 
 # Clase N°7: Introducción a Frontend
-*Desarrollo de Software K3552 (Martes Noche)*
+*Desarrollo de Software (Martes Noche)*
 
-**Fecha: 30 de Septiembre de 2025**
 
 [Link a la presentación de la clase](https://docs.google.com/presentation/d/1GyYSRf6pPjQoZIle0bts07WAV-ziDI0weVD2E4_uTBk/edit?usp=sharing)
 

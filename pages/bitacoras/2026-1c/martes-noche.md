@@ -15,3 +15,7 @@ Cada enlace te lleva a lo visto y lo que hay que ver antes de la siguiente clase
 - [Clase 3: Backend Parte I]({{site.baseurl}}/bitacoras/2026-1c/martes-noche/clase-03)
 - [Clase 4: Backend Parte II]({{site.baseurl}}/bitacoras/2026-1c/martes-noche/clase-04)
 - [Clase 5: Testing]({{site.baseurl}}/bitacoras/2026-1c/martes-noche/clase-05)
+- [Clase 6: ODM]({{site.baseurl}}/bitacoras/2026-1c/martes-noche/clase-06)
+- [Clase 7: Introducción a Frontend]({{site.baseurl}}/bitacoras/2026-1c/martes-noche/clase-07)
+- [Clase 8: Introducción a la UI Client-Side]({{site.baseurl}}/bitacoras/2026-1c/martes-noche/clase-08)
+- [Clase 9: Componentes de UI]({{site.baseurl}}/bitacoras/2026-1c/martes-noche/clase-09)

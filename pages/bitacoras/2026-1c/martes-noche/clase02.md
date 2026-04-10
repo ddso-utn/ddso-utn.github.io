@@ -6,7 +6,7 @@ permalink: /bitacoras/2026-1c/martes-noche/clase-02/
 ---
 
 # Clase N°2: Arquitectura y HTTP
-*Desarrollo de Software K3552 (Martes Noche)*
+*Desarrollo de Software (Martes Noche)*
 
 # Resumen
 Esta clase hablamos de Arquitectura de Software, cuáles son los esquemas más comunes y qué restricciones nos impone la tecnología. Aparte, respondimos consultas sobre Git y enviamos un video sobre Cualidades de Diseño 

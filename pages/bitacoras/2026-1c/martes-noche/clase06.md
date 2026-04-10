@@ -6,9 +6,8 @@ permalink: /bitacoras/2026-1c/martes-noche/clase-06/
 ---
 
 # Clase N°6: ODM
-*Desarrollo de Software K3552 (Martes Noche)*
+*Desarrollo de Software (Martes Noche)*
 
-**Fecha: 23 de Septiembre de 2025**
 
 [Link a la grabación de la clase](https://www.youtube.com/watch?v=eDh96fuPorE)
 
