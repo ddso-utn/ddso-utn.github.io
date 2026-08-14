@@ -5,6 +5,12 @@ description: Bitácoras años anteriores
 permalink: /bitacoras/bitacoras-anteriores/
 ---
 
+## 2026 1C
+
+- [Jueves Mañana]({{site.baseurl}}/bitacoras/2026-1c/jueves-manana)
+- [Martes Noche]({{site.baseurl}}/bitacoras/2026-1c/martes-noche)
+
+
 ## 2025 2C
 
 - [Jueves Mañana]({{site.baseurl}}/bitacoras/2025-2c/jueves-manana)
