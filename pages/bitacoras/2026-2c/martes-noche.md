@@ -1,9 +1,9 @@
 ---
 layout: page
 title: Martes
-description: Turno Noche - 2026 - Primer Cuatrimestre
+description: Turno Noche - 2026 - Segundo Cuatrimestre
 permalink: /bitacoras/2026-2c/martes-noche/
-frame: https://docs.google.com/spreadsheets/d/18KiQOzo8uhHOOjAhCpjYUX0SewCPnYBlwfZY3iIoh18/edit?gid=0#gid=0
+frame: https://docs.google.com/spreadsheets/d/10BcPsQ4dsedinwc4bwFwa8bvxzlDLYhKACjpvvysK5Q/edit?gid=0#gid=0
 ---
 
 ## Clases
