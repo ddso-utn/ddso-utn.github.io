@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Clase 7
-description: Martes Noche, 2026, Primer Cuatrimestre
+description: Martes Noche, 2026, Segundo Cuatrimestre
 permalink: /bitacoras/2026-2c/martes-noche/clase-07/
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Jueves
-description: Turno Noche - 2026 - Primer Cuatrimestre
+description: Turno Noche - 2026 - Segundo Cuatrimestre
 permalink: /bitacoras/2026-2c/jueves-manana/
 frame: "https://docs.google.com/spreadsheets/d/e/2PACX-1vQf0WtS0Ut0gvLgxWJwb33tRBHOVKPhjT4bmest-MwOC1J85THVAOCR9Q9tnI7O6c-FzwGCEGmHS0H8/pubhtml?gid=0&single=true"
 
