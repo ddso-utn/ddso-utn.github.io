@@ -148,12 +148,15 @@ Del 2000 hasta aca.
 
  * [Introducción a Arquitectura](https://docs.google.com/document/d/1XaKMrWPA0jntDK29gtEDRw-CoQgWXfHOmdbmihg4MpE/edit?tab=t.0#heading=h.z9jwy1eurzt9)
  * [Introducción al Desarrollo de Software](https://docs.google.com/document/d/10X8VbMkvJ99JOzH2LuIF2DfGQ55IZpO3ba7eT28Ot4o/edit?tab=t.0)
+ * [_Is AI Profitable Yet?_](https://isaiprofitable.com/)
 
 # Tarea
 
 * [¡Repasá Objetos!](https://www.pdep.com.ar/material/apuntes)
 * Si aún no usaste Git, es importante que [leas ésta introducción](https://docs.google.com/document/d/1nadC6-rwR2eRC0FYFWuq22pCRyZWXmCiPBuQ0cD-vMI/edit#heading=h.r9wuhoi4rpgq)
-* Obligatorio:Instalar [Visual Code](https://code.visualstudio.com/) y git
-* Opcional:
+* Obligatorio:
+  * Instalar [Visual Code](https://code.visualstudio.com/) y git
   * Instalar [node 22](https://nodejs.org/es/download)
-  * Instalar [Mongo 8](https://www.mongodb.com/try/download/community) nativamente o bien utilizando [Docker](https://docs.docker.com/get-started/get-docker/)
+* Opcional:
+  * Instalar [Docker](https://docs.docker.com/get-started/get-docker/)
+  * Instalar [Mongo 8](https://www.mongodb.com/try/download/community) nativamente o bien utilizando Docker
