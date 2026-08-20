@@ -107,27 +107,16 @@ Cliente Servidor, Web, Para Internet. Monolítico, Cliente Pesado, Para navegado
 ![](https://www.plantuml.com/plantuml/png/IqmkoIzISCx9JCqhIULIuChBJqbL24ujAijC0OfpfIIM92Ob5gSgE049brINn9ByOYukg785NJkuKYuO0oY8eXW0)
 
 
-
 ## Arquitectura lógica
 
+¿Como organizar el código servidor? En esta materia trabajaremos sobre la arquitectura de capas. En clase hicimos una breve presentación de sus cuatro elementos fundamentales (capas): 1. enrutamiento, 2.control, 3. servicios, 4. repositorios y modelos. Mencionamos que (en su forma más básica) una de sus características salientes es la "facilidad" de diseño, al simplificar las decisiones que se pueden tomar comparadas contra una arquitectura de objetos, guiada por el dominio u orientada a incumbencias, lo que permite un desarrollo rápido y por equipos menos formados (con sus evidentes y no tan evidentes consecuencias negativas). En la materia diseño profundizaremos más sobre arquitecturas guiadas por el dominio y orientadas a incumbencias; acá buscaremos presentar la arquitectura de capas a modo de contrapunto.
 
-* ¿Como organizar el codigo servidor? En el servidor, cliente pesado: Objetos puros, ddd, capas.
+¿Y como organizar el codigo cliente? Lo veremos más adelante, pero adelantamos que trabajaremos sobre patrones de UI reactivos (como los que proponen React y Vue), en contraposición a arquitecturas MVC clásicas y sus derivados como MVVM.
 
-  * **Modelo de capas** --> lo van a ver el sábado (ruteo, controladores, servicio, persistencia (repositorios y modelos))
+## Tecnologías: JavaScript y Node
 
-  * Modelo MVC Web --> en ddsi
-  * Modelos orientados a objetos organizados únicamente en torno a incumbencias (Domain Driven Design) <--- (modelo, presentación, persistencia y comunicación) --> en ddsi
-
-  * Modelos orientados a objetos sin una arquitectura particular
-  * Modelo VIP (Interactor)
-
-¿Como organizar el codigo cliente? --> para mucho mas adelante
-
-
-## JavaScript y Node
-
- * Entornos de js: hay video.
- * Tecnologías: express y axios. (Hay video). Apis. HTTP. Rest. Json (más en dds). Usar sin discutir demasiado. Foco en el intercambio.
+ * Hablamos sobre los entornos de ejecución de JS: navegador (ejemplo, webkit), vs servidor (node)
+ * Mencionamos brevemente la existencia de tecnologías para exponer y consumir APIs HTTP: express y axios/fetch.
 
 ## Contextos organizacionales
 
@@ -140,15 +129,20 @@ También conversamos contextos organizacionales en los que construimos software:
 
 Y sobre sus posibilidades y restricciones en cada uno.
 
-## Brevísima cronología del desarrollo de software
+También hicimos un brevísimo racconto histórico hablamos de como el horizonte del desarrollo de software ha ido mutando a lo largo de las últimas tres décadas, pero sobre todo nos concentramos en las tecnologías y modos que surgieron a partir de 2008 y se cimentaron en la década de 2010-2020. Mencionamos su relación con la cultura "startup", sus fuentes de financiamiento tras los rescates a los bancos de 2008, la momentánea expansión frenética durante la pandemia de estos modelos y su caída final hacia 2022-2023 con el fin de la pandemia, la guerra de Ucrania y el advenimiento de las tecnologías generativas de consumo masivo (las mal llamadas "IA"s). Todo esto no sólo ha cambiado la forma de construir empresas, sino la reorientación de mercado: de orientado a productos comerciales de consumo masivo a industrias más "pesadas": farmacéuticas y alimentos y, en mucha mayor medida, energía, hardware, vigilancia, militar y de "IA".
 
-Del 2000 hasta aca.
+Finalmente planteamos las incertezas ante nuevas realidades económicos y modos de producción que ya no se adaptan perfectamente con las tecnologías gestadas en la década pasada, pero también señalamos que, en última instancia, las tecnologías basales de la Web también derivan de momentos históricos muy diferentes (mediados y fines de la guerra fría).
 
 # Material
 
- * [Introducción a Arquitectura](https://docs.google.com/document/d/1XaKMrWPA0jntDK29gtEDRw-CoQgWXfHOmdbmihg4MpE/edit?tab=t.0#heading=h.z9jwy1eurzt9)
- * [Introducción al Desarrollo de Software](https://docs.google.com/document/d/10X8VbMkvJ99JOzH2LuIF2DfGQ55IZpO3ba7eT28Ot4o/edit?tab=t.0)
- * [_Is AI Profitable Yet?_](https://isaiprofitable.com/)
+ * Sobre las tecnologías y arquitecturas:
+   * [Introducción a Arquitectura](https://docs.google.com/document/d/1XaKMrWPA0jntDK29gtEDRw-CoQgWXfHOmdbmihg4MpE/edit?tab=t.0#heading=h.z9jwy1eurzt9)
+   * [Introducción al Desarrollo de Software](https://docs.google.com/document/d/10X8VbMkvJ99JOzH2LuIF2DfGQ55IZpO3ba7eT28Ot4o/edit?tab=t.0)
+ * Sobre el contexto
+   * [_Is AI Profitable Yet?_](https://isaiprofitable.com/) (sitio que mencionamos brevemente al discutir sobre quien gana y quien pierde con la "IA")
+   * [Sobre los costos de infraestructura de Starlink vs ARSAT](https://www.letrap.com.ar/letrae/economia-digital/javier-milei-elon-musk-y-starlink-conectar-escuelas-rurales-costara-casi-el-triple-lo-que-cobra-arsat-n5425583) (lo mencionamos brevemente a modo de ejemplo)
+   * [Código de guerra](https://www.naranjacyt.org/articulos/codigo_de_guerra_ed_1_2026.html) (nota de opinión para discutir que toca algunos de los temas que fuimos conversando)
+   * Dos libros breves: Tecnofeudalismo de Yanis Varoufakis y Teoría de la dependencia Digital, de Cecila Rikap
 
 # Tarea
 
