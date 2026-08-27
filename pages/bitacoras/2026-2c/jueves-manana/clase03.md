@@ -8,14 +8,14 @@ permalink: /bitacoras/2026-2c/jueves-manana/clase-03/
 # Temario
 
  * REST
- * Paréntesis: Redes e Internet.
- * Cualidades de diseño: overview. SOLID (mención).
- * Backend: Capa de dominio/Aplicación.
- * Modelo OO. Services. Controllers. Repositories
+ * Redes e Internet.
+ * Cualidades de diseño y principios SOLID (mención).
+ * Frontend y Backend (repaso).
+ * Arquitectura lógica en capas: Services. Controllers. Repositories (repaso)
  * Promises: Mención
  * Manejo de errores
  * Testing. Introducción. Conceptos generales. Estrategias. BDD. TDD.
- * Frameworks web mvc. Livianos y pesados. Ejemplos. Cómo se estructura el servidor (backend).
+ * Frameworks Web MVC. Livianos y pesados. Ejemplos. Cómo se estructura el servidor (backend).
 
 # Resumen
 
@@ -24,8 +24,11 @@ permalink: /bitacoras/2026-2c/jueves-manana/clase-03/
 Repasamos lo visto la clase pasada y dejamos materiales complementarios:
 
  * Internet y Redes: https://howdns.works/es/
- * Herramientas: https://developer.mozilla.org/es/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs.
-    * ⚠ Ojo, hoy en día otra herramienta común para construir interfaces Web y APIs es `next.js`, pero en la materia trabajaremos con `express` y con (sólo) `react`.
+ * Herramientas:
+    * Exposición HTTP con Express:
+       * Introducción de [MDN](https://developer.mozilla.org/es/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs).
+       * Recordá que [dejamos un apunte](https://docs.google.com/document/d/1Nn6GMzm7bD9tvVi_wGjLbt8X4KEk5IChzXdPpEFK4vY)
+    * ⚠ Ojo, hoy en día otra herramienta común para construir interfaces Web y APIs es `next.js`, pero en la materia sólo usaremos `express` para la exposición HTTP. Ocasionalmente `nextjs` aparecerá en ejemplos, pero con un uso limitado. 
  * Docker: es una herramienta opcional. Si tenés curiosidad, acá dejamos [un tutorial](https://docs.google.com/document/d/16-ZVmZQrCbFDDnEyI8eABSp2rwsw3bz1WYyJ7DM9Rxw/edit?tab=t.0)
  * Concurrencia en node.js: el elemento central de planificación en las aplicaciones node es el _event loop_, que permite la programación concurrente aún con un sólo proceso y un sólo hilo (si utilizaste `poll`, `epoll` o `select` en Sistemas Operativos quizás no te resulte una idea tan novedosa). Podés encontrar más información sobre su funcionamiento en el sitio de la [electiva Arquitecturas Concurrentes](https://arquitecturas-concurrentes.github.io/iasc-book/event_loop) y [en MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Execution_model)
   * Axios: aún es pronto para ponerse a trabajar con esta herramienta en profundidad (primero nos concentraremos en exponer APIs HTTP/REST antes que en consumirlas), pero acá dejamos [su documentación en español](https://axios-http.com/es/docs/intro)
