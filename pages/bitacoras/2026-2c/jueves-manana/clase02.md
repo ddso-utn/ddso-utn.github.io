@@ -203,14 +203,14 @@ En esta materia estudiaremos el primero, que organiza a los componentes lógicos
 # Material
 
  * La [presentación de sábado sobre JS](https://docs.google.com/presentation/d/1DSlTheHfB-q5oMV98c9DQGYWgjIG6RV38k3JpKeDv7E/edit?slide=id.p1#slide=id.p1)
- * Herramientas de diagramación: [Mermaid](https://mermaid.js.org/) y [PlantUML](https://www.plantuml.com/)
+ * Herramientas de diagramación: [Mermaid](https://mermaid.js.org/) y [PlantUML](https://www.plantuml.com/). Si bien PlanUML es más completo que Mermaid, éste último tiene la ventaja de estar escrito completamente en JS, lo que nos permite previsualizarlo automáticamente en Github y en VisualCode sin tener que instalar un servidor adicional. 
  * La página de [Can I Use](https://caniuse.com/)
  * [Servidor HTTP de ejemplo](https://github.com/flbulgarelli/http-tutorial/tree/node-client) (con `express`)
  * [Cliente HTTP de ejemplo](https://github.com/flbulgarelli/http-tutorial/tree/node-server) (con `axios`)
 
 # Tarea
 
- * [Tutorial HTTP](https://github.com/flbulgarelli/http-tutorial)
+ * [Tutorial HTTP](https://github.com/flbulgarelli/http-tutorial) (Mínimo hasta el punto 7)
  * [Biblioteca vs Framework](https://docs.google.com/document/d/1D_MCoh4J8kL1MAKNlbDgAMu2nYxri-81nZBYOPFWnO0/edit?tab=t.0#heading=h.6ab0fffv8tld)
  * [Leer el tutorial de express](https://docs.google.com/document/d/1Nn6GMzm7bD9tvVi_wGjLbt8X4KEk5IChzXdPpEFK4vY/edit?tab=t.0#heading=h.halhyllz00mo)
  * Leer el enunciado del TP
