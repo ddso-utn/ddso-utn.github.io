@@ -23,13 +23,13 @@ permalink: /bitacoras/2026-2c/jueves-manana/clase-03/
 
 Repasamos lo visto la clase pasada y dejamos materiales complementarios:
 
- * Internet y Redes: https://howdns.works/es/
+ * 🌐 Internet y Redes: https://howdns.works/es/
  * Herramientas:
     * Exposición HTTP con Express:
        * Introducción de [MDN](https://developer.mozilla.org/es/docs/Learn_web_development/Extensions/Server-side/Express_Nodejs).
        * Recordá que [dejamos un apunte](https://docs.google.com/document/d/1Nn6GMzm7bD9tvVi_wGjLbt8X4KEk5IChzXdPpEFK4vY)
-    * ⚠ Ojo, hoy en día otra herramienta común para construir interfaces Web y APIs es `next.js`, pero en la materia sólo usaremos `express` para la exposición HTTP. Ocasionalmente `nextjs` aparecerá en ejemplos, pero con un uso limitado. 
- * Docker: es una herramienta opcional. Si tenés curiosidad, acá dejamos [un tutorial](https://docs.google.com/document/d/16-ZVmZQrCbFDDnEyI8eABSp2rwsw3bz1WYyJ7DM9Rxw/edit?tab=t.0)
+    * ⚠️ Ojo, hoy en día otra herramienta común para construir interfaces Web y APIs es `next.js`, pero en la materia sólo usaremos `express` para la exposición HTTP. Ocasionalmente `nextjs` aparecerá en ejemplos, pero con un uso limitado. 
+ * 🐋 Docker: es una herramienta opcional. Si tenés curiosidad, acá dejamos [un tutorial](https://docs.google.com/document/d/16-ZVmZQrCbFDDnEyI8eABSp2rwsw3bz1WYyJ7DM9Rxw/edit?tab=t.0)
  * Concurrencia en node.js: el elemento central de planificación en las aplicaciones node es el _event loop_, que permite la programación concurrente aún con un sólo proceso y un sólo hilo (si utilizaste `poll`, `epoll` o `select` en Sistemas Operativos quizás no te resulte una idea tan novedosa). Podés encontrar más información sobre su funcionamiento en el sitio de la [electiva Arquitecturas Concurrentes](https://arquitecturas-concurrentes.github.io/iasc-book/event_loop) y [en MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Execution_model)
   * Axios: aún es pronto para ponerse a trabajar con esta herramienta en profundidad (primero nos concentraremos en exponer APIs HTTP/REST antes que en consumirlas), pero acá dejamos [su documentación en español](https://axios-http.com/es/docs/intro)
   * Express vs node: node es un _entorno de ejecución_, que además de un intérprete y un gestor de paquete cuenta con bibliotecas de bajo nivel. Si bien node permite nativamente programar aplicaciones TCP/HTTP, para programar aplicaciones HTTP/REST es más conveniente utilizar un _framework_ de alto nivel que nos simplifique varias tareas y nos provea de un marco de trabajo para definir rutas.
@@ -41,7 +41,6 @@ Repasamos lo visto la clase pasada y dejamos materiales complementarios:
  * Desarrollo iterativo-incremental: este concepto ya lo deberían tener de materias anteriores. Si no, [acá dejamos una breve introducción y comparación con otros enfoques](https://docs.google.com/document/d/11PQO8NPSOV4SW0ZwtFsh4RCtWubuEBV6E5qPicqJNKs/edit?tab=t.0#heading=h.bva2amx4ntdf). En esta materia, siempre asumiremos que trabajamos bajo ese enfoque.
  * Justamente, porque el software mutará todo el tiempo, es fundamental trabajar con herramientas de control de versiones, como `git`, y también con herramientas que permitan dar seguimiento a los problemas y propuestas de mejora que surgen: los _issue trackers_, como por ejemplo Github Issues y Github Projects (dos herramientas que nos acompañarán en el trabajo práctico). Hay muchísimas alternativas, como Jira o Trello (también un servicio en la nube) y [Bugzilla](https://www.bugzilla.org/) y [Mantis](https://mantisbt.org/) (herramientas de código abierto que se pueden instalar localmente)
   * Todas estas etapas son esenciales no sólo para dar soporte a la codificación del proyecto, sino también a la planificación, análisis y prueba.
-
 
 ## Desarrollo Backend
 
@@ -60,20 +59,18 @@ Cuando hablamos de arquitectura nos encontraremos con múltiples definiciones e 
 
 Pero también podríamos hablar de la arquitectura lógica: el diseño de más alto nivel de nuestros componentes software. All´i estudiaremos como los módulos, paquetes, clases e interfaces se organizan en torno en agrupaciones de alto nivel, que comparten tecnológicas, estilos de comunicación,  equipos de trabajo, heurísticas o formas de trabajo.
 
-Tal como existe una gran variedad de arquitecturas físicas, también existen muchos tipos de arquitecturas lógicas, también llamados estilos arquitectónicos o patrones arquitecturales (o cualquier combinación similar de estos términos 😛).
+Tal como existe una gran variedad de arquitecturas físicas, también existen muchos tipos de arquitecturas lógicas, también llamados estilos arquitectónicos o patrones arquitecturales (o cualquier combinación similar de estos términos 😛). Cada una ya tiene sus propias ventajas y desventajas, detractores y defensores, y no son necesariamente antagónicas. Además, cada una buscan resolver un cierto problema del sistema, por que en ocasiones podemos verlas complementándose. Por ejemplo, en el mundo del desarrollo Web tenemos dos problemas típicos:
 
-Cada una ya tiene sus propias ventajas y desventajas, detractores y defensores, y no son necesariamente antagónicas.
+* ¿Cómo exponer las funciones del Backend hacia el mundo exterior? ¿Cómo lidiar con los problemas de presentación bajo las limitaciones de la arquitectura física web? ¿Cómo organizar los componentes en el cliente? 
+  * MVC Web del lado del servidor: Inspirado en el patrón _Model-View-Controller_ de los años 80, adaptado a aplicaciones web. La lógica del servidor está dividida en controladores (que manejan la interacción del usuario), modelos (que representan los datos y lógica de negocio), y vistas (que generan las respuestas HTML o datos). Ejemplo clásico: aplicaciones con Ruby on Rails o Django.
+  * MVC (y derivados MVP, MVVM) Web del lado del cliente: cuando se utiliza un cliente pesado, el patrón MVC puede migrar al navegador. Frameworks como React (aunque no implementa MVC estrictamente), Angular o Vue ofrecen formas de organizar el código del cliente con separación entre lógica, datos y presentación.
+* ¿Cómo coordinar internamente los componentes del Backend? ¿Cómo vincular las reglas de negocio, la persistencia de la información y la exposición hacia el mundo exterior?   
+   * Modelo basado en _concerns_ (incumbencias): organiza el backend en grupos de componentes lógicos como Presentación, Dominio, y Persistencia. Esta separación permite un mayor desacoplamiento y extensibilidad, alineándose muchas veces con prácticas de diseño orientadas a dominio (como DDD).
+   * Modelo en capas: típicamente incluye capas como Controladores, Servicios, Repositorios y Modelos, y utiliza DTOs para la transferencia de información. Leer el  capítulo 4 del Libro Domain Driven Design de Eric Evans (ver materiales).
+   * Modelo orientado a objetos (OO): no es un patrón arquitectónico per se, pero se integra bien con los anteriores. Apunta a modelar el dominio a partir de un conjunto de objetos que colaboran sin una estructura a-priori, sino guiada por los requerimientos. En los mundos de MVC o la separación en base a _concerns_,  el modelo puede estar organizando en torno a un dominio de objetos sin otra estructura particular.
 
-En el ámbito particular del desarrollo web podemos encontrar dos prominentes (que a su vez de han influenciado históricamente).
-
-- MVC Web del lado del servidor: Inspirado en el patrón _Model-View-Controller_ de los años 80, adaptado a aplicaciones web. La lógica del servidor está dividida en controladores (que manejan la interacción del usuario), modelos (que representan los datos y lógica de negocio), y vistas (que generan las respuestas HTML o datos). Ejemplo clásico: aplicaciones con Ruby on Rails o Django.
-- MVC (y derivados MVP, MVVM) Web del lado del cliente: cuando se utiliza un cliente pesado, el patrón MVC puede migrar al navegador. Frameworks como React (aunque no implementa MVC estrictamente), Angular o Vue ofrecen formas de organizar el código del cliente con separación entre lógica, datos y presentación.
-- Modelo basado en _concerns_ (incumbencias): organiza el backend en grupos de componentes lógicos como Presentación, Dominio, y Persistencia. Esta separación permite un mayor desacoplamiento y extensibilidad, alineándose muchas veces con prácticas de diseño orientadas a dominio (como DDD).
-- Modelo en capas: típicamente incluye capas como Controladores, Servicios, Repositorios y Modelos, y utiliza DTOs para la transferencia de información. Leer el  capítulo 4 del Libro Domain Driven Design de Eric Evans (ver materiales).
-- Modelo orientado a objetos (OO): no es un patrón arquitectónico per se, pero se integra bien con los anteriores. Apunta a modelar el dominio a partir de un conjunto de objetos que colaboran sin una estructura a-priori, sino guiada por los requerimientos. En los mundos de MVC o la separación en base a _concerns_,  el modelo puede estar organizando en torno a un dominio de objetos sin otra estructura particular.
-
-Ninguna arquitectura es “la mejor” en forma absoluta. Cada una tiene ventajas y limitaciones, y su elección dependerá del tipo de aplicación, el equipo, las tecnologías disponibles y los requerimientos del negocio.
-
+  
+Ninguna arquitectura es "la mejor" en forma absoluta. Cada una tiene ventajas y limitaciones, y su elección dependerá del tipo de aplicación, el equipo, las tecnologías disponibles y los requerimientos del negocio.
 
 
 ### Cliente liviano y pesado
