@@ -144,10 +144,10 @@ Finalmente planteamos las incertezas ante nuevas realidades económicos y modos 
    * [Código de guerra](https://www.naranjacyt.org/articulos/codigo_de_guerra_ed_1_2026.html) (nota de opinión para discutir que toca algunos de los temas que fuimos conversando)
    * Dos libros breves: Tecnofeudalismo de Yanis Varoufakis y Teoría de la dependencia Digital, de Cecila Rikap
    * Algunas estadísticas sobre el movimientos de las áreas económicas a lo largo de las últimas dos décadas (prestar atención a los años "pivot" en 2008-2009, 2019-2020 y 20203-2024):
-      * https://dealroom.co/sectors/biotech-life-sciences/
-      * https://dealroom.co/sectors/edtech/
-      * https://dealroom.co/sectors/food/
-      * https://dealroom.co/countries/united-states/
+      * [https://dealroom.co/sectors/biotech-life-sciences/](https://dealroom.co/sectors/biotech-life-sciences/)
+      * [https://dealroom.co/sectors/edtech/](https://dealroom.co/sectors/edtech/)
+      * [https://dealroom.co/sectors/food/](https://dealroom.co/sectors/food/)
+      * [https://dealroom.co/countries/united-states/](https://dealroom.co/countries/united-states/)
 
 
 # Tarea
