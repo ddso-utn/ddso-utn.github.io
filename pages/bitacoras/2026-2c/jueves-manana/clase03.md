@@ -72,6 +72,82 @@ Tal como existe una gran variedad de arquitecturas físicas, también existen mu
   
 Ninguna arquitectura es "la mejor" en forma absoluta. Cada una tiene ventajas y limitaciones, y su elección dependerá del tipo de aplicación, el equipo, las tecnologías disponibles y los requerimientos del negocio.
 
+### Paréntesis: dominio, "modelos", y modelo rico vs anémico
+
+Tomamos como ejemplo este modelo de dominio sencillo:
+
+```mermaid
+classDiagram
+  Carrito --> Item
+  Item --> Producto
+```
+
+<img width="153" height="385" alt="image" src="https://github.com/user-attachments/assets/baac4468-9792-4ec8-96e1-0c294f0eaa5b" />
+
+
+Acá estamos viendo dos cosas: 
+  * Por un lado, el (modelo) de dominio del negocio: los conceptos y sus vínculos, desde un punto de vista analítico
+  * Pero también estamos viendo una propuesta de como bajar esos conceptos a un ambiente de objetos, usando clases.
+
+> ⚠️ Intencionalmente no estamos mostrando el comportamiento; ya vamos a eso.
+>
+> 
+
+Esto se puede bajar a JS de la siguiente forma:
+
+```js
+
+class Item {
+  constructor(producto, cantidad) {
+    this.producto = producto
+    this.cantidad = cantidad
+  }
+}
+
+class Carrito {
+  constructor() {
+    this.items = [] 
+  }  
+
+  agregarProducto(item) {
+    this.items.push(item)
+  }
+}
+
+class Producto {
+  constructor(titulo) {
+    this.titulo = titulo
+  }
+}
+
+let gaseosa = new Producto("Lima Limon Generica")
+
+let carrito = new Carrito()
+carrito.agregarProducto(new Item(gaseosa, 2))
+```
+
+Pero ahora pensemos: ¿dónde podríamos ubicar el comportamiento del "calcular el precio total del carrito"?
+
+```
+// La respuesta de PDP / DDSi / arquitecturas orientadas a objetos / incumbencias / guiadas por el dominio es trivial:
+carrito.precioTotal() // ponemos ese comportamiento en el objeto del modelo de dominio
+
+// La otra opción (por ejemplo, en arquitectura lógica de capas)
+// es NO poner el comportamiento en el objeto de dominio sino en otro componente que no es parte del dominio: un servicio
+servicioDeCarritos.precioTotalDe(carrito)
+// o incluso
+servicioDePrecios.precioTotalDe(carrito)
+
+
+// lo que me interesa es que el modelo queda SIN comportamiento interesante (modelo anémico) y las clases se vuelven 
+// prácticamente estructuras de datos. 
+```
+
+> **Corolario**: el significa de dominio / modelo de domino varía según el contexto
+> en termino de análisis: SIEMPRE hay un modelo de dominio
+> en términos de implementación / diseño / programación: son los componentes software (objetos)
+> que implementan esas nociones de dominio
+> y que pueden tener una centralidad mayor o menor según la arquitectura: modelos ricos (con comportamiento) vs modelos anémicos  
 
 ### Cliente liviano y pesado
 
@@ -98,9 +174,9 @@ Como manejarlos y dónde.
 
 Si no lo hiciste ya:
 
- * Leer el [Tutorial HTTP](https://github.com/flbulgarelli/http-tutorial)
+ * Leer el [Tutorial HTTP](https://github.com/flbulgarelli/http-tutorial) (hasta el punto 14)
  * Leer [Biblioteca vs Framework](https://docs.google.com/document/d/1D_MCoh4J8kL1MAKNlbDgAMu2nYxri-81nZBYOPFWnO0/edit?tab=t.0#heading=h.6ab0fffv8tld)
- * Leer el enunciado del TP
+ * Leer el enunciado del TP y comenzar a plantearlo
  * Repasá el video de manejo de Dependencias (`npm`) y flujos de trabajo con `git` del sábado pasado
  * [Introducción al Desarrollo de Software](https://docs.google.com/document/d/10X8VbMkvJ99JOzH2LuIF2DfGQ55IZpO3ba7eT28Ot4o/edit?tab=t.0)
 
