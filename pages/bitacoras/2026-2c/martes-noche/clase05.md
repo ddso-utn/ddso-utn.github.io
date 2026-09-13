@@ -6,8 +6,8 @@ permalink: /bitacoras/2026-2c/martes-noche/clase-05/
 ---
 
 # Clase N°5: Testing
-*Desarrollo de Software (Martes Noche)*
 
+_Desarrollo de Software (Martes Noche)_
 
 # Resumen
 
@@ -22,15 +22,16 @@ También veremos enfoques modernos como **BDD**, **mocking** y **TDD**, que ayud
 - [Automatización](#automatizacion)
 - [Independencia](#independencia)
 - [Clasificación](#clasificacion)
-	- [Unitarios](#unitarios)
-	- [Integración](#integracion)
-	- [Funcionales (o E2E)](#funcionales)
-	- [Pirámide de testing](#piramide-testing)
+  - [Unitarios](#unitarios)
+  - [Integración](#integracion)
+  - [Funcionales (o E2E)](#funcionales)
+  - [Pirámide de testing](#piramide-testing)
 - [BDD](#bdd)
 - [Mocking](#mocking)
 - 🔴🟢[TDD](#tdd)
 
 <a id="introduccion"></a>
+
 ## Introducción
 
 Cuando hablamos de **testing** nos referimos a la disciplina que permite verificar si el software cumple con lo esperado.
@@ -39,7 +40,7 @@ Aunque pueda sonar técnico, la idea es bastante cotidiana. Pensemos en la compr
 
 En el desarrollo de software ocurre lo mismo. Antes de confiar en un programa necesitamos comprobar que responde como se espera.
 
-En la práctica, ningún sistema está libre de errores. Sin embargo, podemos reducir la incertidumbre sometiéndolo a distintas pruebas. Estas pruebas contrastan el resultado esperado con el real, y cuando aparecen diferencias, hablamos de *bugs*.
+En la práctica, ningún sistema está libre de errores. Sin embargo, podemos reducir la incertidumbre sometiéndolo a distintas pruebas. Estas pruebas contrastan el resultado esperado con el real, y cuando aparecen diferencias, hablamos de _bugs_.
 
 > **Observación**: Un conjunto de tests que nunca detecta errores seguramente no esté cubriendo los escenarios correctos.
 
@@ -47,15 +48,15 @@ Para organizarlos, conviene pensar en los distintos caminos de ejecución que un
 
 - **Camino feliz:** todo sale según lo previsto.
 
-   > **Ejemplo:** un usuario ingresa sus credenciales correctas y accede al sistema.
+  > **Ejemplo:** un usuario ingresa sus credenciales correctas y accede al sistema.
 
 - **Camino no feliz:** se presentan casos de error previsibles.
 
-   > **Ejemplo:** un usuario escribe mal su contraseña y se le niega el acceso.
+  > **Ejemplo:** un usuario escribe mal su contraseña y se le niega el acceso.
 
 - **Caminos poco esperables:** situaciones extremas o poco comunes.
 
-   > **Ejemplo:** intentar subir una foto de 10 GB a una red social.
+  > **Ejemplo:** intentar subir una foto de 10 GB a una red social.
 
 La base para definir qué caminos conviene probar son los **requerimientos**. Cada requisito debería derivar en al menos un caso de prueba.
 
@@ -66,7 +67,9 @@ Para darles más orden distinguimos dos niveles:
 - **Casos de test:** son instancias concretas con entradas, acciones y expectativas. Ejemplo: “login con contraseña correcta concede acceso”.
 
 <a id="estructura"></a>
+
 ## Estructura
+
 Un test bien diseñado sigue una narrativa clara que puede resumirse en tres pasos:
 
 1. **Precondiciones**: definimos el contexto inicial, configurando datos, objetos o estados necesarios.
@@ -78,31 +81,33 @@ Un test bien diseñado sigue una narrativa clara que puede resumirse en tres pas
 Más adelante veremos un esquema que servirá de guía en la mayoría de los enfoques modernos de testing.
 
 <a id="automatizacion"></a>
+
 ## Automatización
 
 Automatizar tests no es un fin en sí mismo: conviene hacerlo solo cuando aporta verdadero valor. Una forma de evaluarlo es hacerse estas tres preguntas:
 
 1. **¿Es posible automatizar este test?**
 
-	Sí, siempre que las entradas y salidas estén bien definidas.
+   Sí, siempre que las entradas y salidas estén bien definidas.
 
    > **Ejemplo:** un test unitario que valida la lógica de una clase.
 
 2. **¿Qué beneficio aporta automatizarlo?**
 
-	La automatización brilla cuando necesitamos feedback rápido y confiable.
+   La automatización brilla cuando necesitamos feedback rápido y confiable.
 
    > **Ejemplo:** al construir un service que utiliza clases de dominio, podemos automatizar los tests para asegurarnos de que la lógica central siga funcionando sin romperse.
 
 3. **¿Será mantenible en el tiempo?**
 
-	Un test que se rompe con cada cambio deja de ser una ayuda y se vuelve una carga.
+   Un test que se rompe con cada cambio deja de ser una ayuda y se vuelve una carga.
 
    > **Ejemplo:** un test de UI que falla cada vez que cambia el nombre de un botón termina dando más ruido que certezas.
 
 En resumen, automatizar vale la pena en lo que es estable, rápido de ejecutar y útil a largo plazo. El resto conviene revisarlo manualmente.
 
 <a id="independencia"></a>
+
 ## Independencia
 
 Un principio básico del testing es la **independencia**: cada test debe poder ejecutarse por sí solo y ser determinístico sin importar el contexto o el orden en que se ejecute.
@@ -111,22 +116,24 @@ En la práctica, esto significa que:
 
 - No se deben **encadenar pruebas**, es decir, un test no debe preparar datos que otro necesite.
 
-   > **Ejemplo:** un test que crea un usuario no debería dejarlo disponible para que otro test lo use.
+  > **Ejemplo:** un test que crea un usuario no debería dejarlo disponible para que otro test lo use.
 
 - Se debe **restaurar el estado**: al terminar un test, todo debería volver a condiciones limpias.
 
-   > **Ejemplo:** si en un test agregamos elementos a una lista y no la vaciamos, otro test podría empezar con datos “sucios” y fallar por un motivo ajeno a lo que realmente prueba.
+  > **Ejemplo:** si en un test agregamos elementos a una lista y no la vaciamos, otro test podría empezar con datos “sucios” y fallar por un motivo ajeno a lo que realmente prueba.
 
 - Los tests deben poder **ejecutarse en paralelo** sin chocar entre sí.
 
-   > **Ejemplo:** dos tests que escriben en el mismo archivo al mismo tiempo pueden interferirse y dar errores falsos.
+  > **Ejemplo:** dos tests que escriben en el mismo archivo al mismo tiempo pueden interferirse y dar errores falsos.
 
 Cuando se cumple este principio, los tests ofrecen resultados confiables y fáciles de interpretar.
 
 <a id="clasificacion"></a>
+
 ## Clasificación
 
 <a id="unitarios"></a>
+
 ### Unitarios
 
 Los **tests unitarios** se concentran en la **unidad mínima de lógica**, como una función o un método.
@@ -141,12 +148,13 @@ Por ejemplo, con [Jest](https://jestjs.io/) podemos validar una función simple:
 
 ```js
 // suma.test.js
-test('suma dos números', () => {
-  expect(sumar(2,3)).toBe(5);
+test("suma dos números", () => {
+  expect(sumar(2, 3)).toBe(5);
 });
 ```
 
 <a id="integracion"></a>
+
 ### Integración
 
 Los **tests de integración** verifican que varios módulos funcionen bien en conjunto.
@@ -158,19 +166,20 @@ Aunque son más lentos y costosos que los unitarios, aportan confianza en que la
 Por ejemplo, con [Supertest](https://www.npmjs.com/package/supertest) podemos validar que un endpoint responda como esperamos:
 
 ```js
-import request from 'supertest';
-import app from '../app';
+import request from "supertest";
+import app from "../app";
 
-test('GET /usuarios devuelve 200', async () => {
-  const res = await request(app).get('/usuarios');
+test("GET /usuarios devuelve 200", async () => {
+  const res = await request(app).get("/usuarios");
   expect(res.status).toBe(200);
 });
 ```
 
 <a id="funcionales"></a>
+
 ### Funcionales (o E2E)
 
-Los **tests funcionales** o **E2E** (*end to end*) validan el sistema completo **tal como lo usaría una persona real**.
+Los **tests funcionales** o **E2E** (_end to end_) validan el sistema completo **tal como lo usaría una persona real**.
 
 Simulan un flujo de principio a fin: abrir la aplicación, ingresar datos, interactuar con la interfaz y comprobar el resultado final.
 
@@ -181,16 +190,19 @@ Son más lentos y costosos de mantener que unitarios e integración, pero son lo
 Ejemplo con [Cypress](https://www.cypress.io/):
 
 ```js
-it('login exitoso (camino feliz)', () => {
-  cy.visit('/login');
-  cy.get('#usuario').type('ana');
-  cy.get('#password').type('secreto');
-  cy.contains('Ingresar').click();
-  cy.url().should('include', '/home');
+it("login exitoso (camino feliz)", () => {
+  cy.visit("/login");
+  cy.get("#usuario").type("ana");
+  cy.get("#password").type("secreto");
+  cy.contains("Ingresar").click();
+  cy.url().should("include", "/home");
 });
 ```
 
+> **Observación**: un test E2E no es una caja negra: es una secuencia de acciones simples, una detrás de otra. Cada paso se puede entender por separado, y eso vuelve al test completo fácil de leer y de mantener.
+
 <a id="piramide-testing"></a>
+
 ### Pirámide de testing
 
 Cuando hablamos de distintos tipos de pruebas, nos preguntamos: **¿cuántas hacer de cada una?**.
@@ -198,7 +210,7 @@ Cuando hablamos de distintos tipos de pruebas, nos preguntamos: **¿cuántas hac
 La pirámide de testing es una metáfora visual que responde justamente a eso, mostrando la proporción recomendada entre unitarios, integración y E2E.
 
 <p align="center">
-  <img src="imagenes/piramide-testing.png" alt="Pirámide de testing" width="300"/>
+  <img src="{{site.url}}{{site.baseurl}}/assets/images/bitacora-martes-noche/piramide-testing-1.png" alt="Pirámide de testing" width="420"/>
 </p>
 
 La **base más ancha** corresponde a los tests unitarios: rápidos y abundantes, son los que sostienen la suite.
@@ -210,6 +222,7 @@ Por último, en la **punta** se ubican los E2E: pocos, lentos y costosos, pero v
 En conclusión, la pirámide muestra que una buena suite no se apoya en un solo tipo de test, sino en combinar varios niveles con equilibrio.
 
 <a id="bdd"></a>
+
 ## BDD
 
 El **Behavior-Driven Development (BDD)** es una forma de pensar el desarrollo centrada en el comportamiento esperado del sistema.
@@ -230,6 +243,7 @@ Scenario: Login exitoso
 A diferencia de los tests clásicos, que son más técnicos y atómicos, BDD utiliza escenarios completos que se leen casi como especificaciones. De esta forma, los tests cumplen dos funciones: validar el sistema y, al mismo tiempo, documentar de manera clara qué comportamiento se espera.
 
 <a id="mocking"></a>
+
 ## Mocking
 
 Muchas veces no podemos testear con los componentes reales: quizás porque todavía no existen, porque dependen de un servicio externo, o simplemente porque son lentos y costosos de usar en pruebas.
@@ -241,23 +255,24 @@ Imaginemos un servicio de clima que aún no está implementado. Queremos probar 
 ```js
 const climaMock = { obtener: () => ({ temp: 25 }) };
 
-test('elige remera si hace calor', () => {
+test("elige remera si hace calor", () => {
   const resultado = vestir(climaMock);
-  expect(resultado).toBe('remera');
+  expect(resultado).toBe("remera");
 });
 ```
 
-Con este objeto *bobo* (`climaMock`) ya podemos validar la lógica de `vestir()` sin depender de nada externo. Además, tenemos control total sobre qué devuelve el mock: podemos simular tanto un resultado válido como un error, haciendo que los tests sean rápidos, predecibles y fáciles de repetir.
+Con este objeto _bobo_ (`climaMock`) ya podemos validar la lógica de `vestir()` sin depender de nada externo. Además, tenemos control total sobre qué devuelve el mock: podemos simular tanto un resultado válido como un error, haciendo que los tests sean rápidos, predecibles y fáciles de repetir.
 
 Finalmente, mencionemos que el mocking puede hacerse a mano, como en el ejemplo, o usando librerías como **Jest**. Según el lenguaje, esto puede ser trivial (como en JavaScript, donde los objetos son dinámicos) o más complejo (como en Java, donde usamos Mockito).
 
 <a id="tdd"></a>
+
 ## 🔴🟢 TDD
 
 El **Test-Driven Development (TDD)** propone escribir primero el test y después el código. Se lo suele resumir con la idea de un **semáforo**:
 
 1. **Rojo**: el test falla porque la funcionalidad aún no existe.
 2. **Verde**: escribimos lo mínimo necesario para que el test pase.
-3. **Refactor**: mejoramos el diseño manteniendo los tests en *verde*.
+3. **Refactor**: mejoramos el diseño manteniendo los tests en _verde_.
 
 Este ciclo simple y repetitivo asegura que cada nueva funcionalidad nazca acompañada de una prueba, y que siempre tengamos feedback inmediato sobre si el sistema sigue funcionando.
