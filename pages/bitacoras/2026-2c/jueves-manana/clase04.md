@@ -5,6 +5,7 @@ description: Jueves Mañana, 2026, Primer Cuatrimestre
 permalink: /bitacoras/2026-2c/jueves-manana/clase-04/
 ---
 
+
 # Temario
 
  * Persistencia. Concepto.
@@ -38,9 +39,40 @@ permalink: /bitacoras/2026-2c/jueves-manana/clase-04/
 8. Introducción al concepto de _impedance mismatch_ y a un mapeador ODM: [Mongoose](https://mongoosejs.com/).
 
 
-## Notas de clase
+## <a name='Notasdeclase'></a>Notas de clase
 
-### Persistencia
+<!-- vscode-markdown-toc -->
+* [Notas de clase](#Notasdeclase)
+	* [Persistencia](#Persistencia)
+	* [Bases de datos](#Basesdedatos)
+	* [Lenguaje de consulta](#Lenguajedeconsulta)
+	* [Paréntesis académico](#Parntesisacadmico)
+	* [Conectarnos a una base de datos](#Conectarnosaunabasededatos)
+	* [Repaso de la arquitectura de servicios](#Repasodelaarquitecturadeservicios)
+	* [Arquitecturas distribuidas](#Arquitecturasdistribuidas)
+	* [Identificadores en Mongo: `ObjectID`](#IdentificadoresenMongo:ObjectID)
+	* [¿Mongo persiste en `JSON`?](#MongopersisteenJSON)
+	* [Paréntesis: el modelo _orden - item - producto_](#Parntesis:elmodelo_orden-item-producto_)
+	* [Esquema sí / esquema no](#Esquemasesquemano)
+	* [Paquete `mongodb` vs `mongoose`](#Paquetemongodbvsmongoose)
+	* [Colecciones en REST vs Colecciones en Mongo](#ColeccionesenRESTvsColeccionesenMongo)
+	* [Comandos de ejemplo](#Comandosdeejemplo)
+		* [Iniciar mediante docker](#Iniciarmediantedocker)
+		* [Conectarse al servidor de base de datos](#Conectarsealservidordebasededatos)
+		* [Acceso a bases de datos y colecciones](#Accesoabasesdedatosycolecciones)
+		* [Consulta de colecciones](#Consultadecolecciones)
+		* [Modificación de documentos](#Modificacindedocumentos)
+		* [Importación de datos](#Importacindedatos)
+	* [Modelado en MongoDB](#ModeladoenMongoDB)
+	* [Gestionando la desnormalización](#Gestionandoladesnormalizacin)
+
+<!-- vscode-markdown-toc-config
+	numbering=false
+	autoSave=true
+	/vscode-markdown-toc-config -->
+<!-- /vscode-markdown-toc -->
+
+### <a name='Persistencia'></a>Persistencia
 
 > ¿Persistencia? ¿Persistir? ¿Qué es eso?
 
@@ -67,7 +99,7 @@ permalink: /bitacoras/2026-2c/jueves-manana/clase-04/
           - Tabular
               - no nos interesa ahora.
 
-### Bases de datos
+### <a name='Basesdedatos'></a>Bases de datos
 
 > ¿Bases de datos?  ¿Qué es eso?
 
@@ -94,7 +126,7 @@ permalink: /bitacoras/2026-2c/jueves-manana/clase-04/
       - SQLite => es una de datos que se puede usar de forma embebida
       - HSQLDB => otra base de datos embebida, en memoria
 
-### Lenguaje de consulta
+### <a name='Lenguajedeconsulta'></a>Lenguaje de consulta
 
 > ¿Cómo consultamos los datos? ¿Cómo hacemos nuestras operaciones CRUD?
 
@@ -106,7 +138,7 @@ permalink: /bitacoras/2026-2c/jueves-manana/clase-04/
 - El lenguaje JavaScript de MongoDB -> sólo en MongoDB
 
 
-### Paréntesis académico
+### <a name='Parntesisacadmico'></a>Paréntesis académico
 
 > ¿Y por qué Mongo? ¿Por qué no MySQL? ¿Por qué no Redis? ¿Por qué no `<inserte su base favorita>`?
 
@@ -117,7 +149,7 @@ Elegimos Mongo y al modelo documental sólo porque nos calza bien en la cursada:
   - porque utiliza el lenguaje JavaScript como lenguaje de consulta
 
 
-### Conectarnos a una base de datos
+### <a name='Conectarnosaunabasededatos'></a>Conectarnos a una base de datos
 
 1. Agregar el driver (de mongo, en este caso)  a nuestro `package.json` y hacer `npm install`
 2. Vamos a tener que establecer una conexión con la base de datos, indicando la cadena de conexión: sin ella, la aplicación no funcionará
@@ -126,7 +158,7 @@ Elegimos Mongo y al modelo documental sólo porque nos calza bien en la cursada:
 4. Usar el cliente en los repositorios en lugar de listas en memorias
 
 
-### Repaso de la arquitectura de servicios
+### <a name='Repasodelaarquitecturadeservicios'></a>Repaso de la arquitectura de servicios
 
 - Tenemos un componente ruteador, que redirige las rutas http a controladores
 - Tenemos varios controladores, que procesan las peticiones HTTP e implementa la lógica de dominio
@@ -137,12 +169,12 @@ Elegimos Mongo y al modelo documental sólo porque nos calza bien en la cursada:
   - Podrían ser repositorios en memoria, que simplemente guardan la información en arrays/listas de JS
   - Podrían ser repositorios persistentes, que utilizan un cliente (ejemplo MongoClient) para realizar las operaciones CRUD
 
-### Arquitecturas distribuidas
+### <a name='Arquitecturasdistribuidas'></a>Arquitecturas distribuidas
 
 1. En la materia siempre vamos a tener una sóla base de datos y un sólo servidor
 2. En el mundo real, sin embargo, podríamos conectar más de una aplicación al mismo servidor de base de datos
 
-## Identificadores en Mongo: `ObjectID`
+### <a name='IdentificadoresenMongo:ObjectID'></a>Identificadores en Mongo: `ObjectID`
 
 En relacional el tipo más fácil de indexar, y por tanto, el más común como clave primaria
 es el entero autoincremental. Esto vale tanto si estamos hablando de claves naturales enteras
@@ -151,12 +183,12 @@ como claves subrrogadas (`id`).
 En mongo también se puede, pero por defecto utiliza un tipo llamado `ObjectID`, que son UUIDs
 que incluyen entre otras cosas la fecha de creación.
 
-## ¿Mongo persiste en `JSON`?
+### <a name='MongopersisteenJSON'></a>¿Mongo persiste en `JSON`?
 
 En Mongo se persiste en `BSON`, que es una versión binaria de JSON que tiene soporte para alguns tipos de datos más.
 
 
-## Paréntesis: el modelo _orden - item - producto_
+### <a name='Parntesis:elmodelo_orden-item-producto_'></a>Paréntesis: el modelo _orden - item - producto_
 
 pedido / orden: representa la compra
 item: hay uno o más items por pedido, que representa cada tipo de cosa que se compró y sus repeticiones
@@ -192,7 +224,7 @@ Corolario:
       - dato al margen: para hacer "joins" en mongo, existe la operación `$lookup`
 
 
-## Esquema sí / esquema no
+### <a name='Esquemasesquemano'></a>Esquema sí / esquema no
 
 Si bien es flexible no tener que definir un esquema _a priori_, a la larga, es difícil de mantener y vamos a tener que igualmente:
   - implementar migraciones de datos
@@ -201,7 +233,7 @@ Si bien es flexible no tener que definir un esquema _a priori_, a la larga, es d
       - si utilizan lenguajes con tipado estático (typescript, java, etc) también se pueden incorporar estas validaciones de esquema
 
 
-## Paquete `mongodb` vs `mongoose`
+### <a name='Paquetemongodbvsmongoose'></a>Paquete `mongodb` vs `mongoose`
 
  * `mongodb` es un driver / conector de base de datos. Existe un paquete por cada lenguaje de programación común (ej: hay para python, para node, para java, etc)
     - `jdbc`: es la familia de drivers / la tecnología de conexión a bases de datos  (típicamente relacionales, tipicamente SQL) de Java
@@ -209,7 +241,7 @@ Si bien es flexible no tener que definir un esquema _a priori_, a la larga, es d
  * `mongoose` es un ODM: sirve para resolver las diferencias entre el mundo documental de mongo y el mundo de objetos en tu lenguaje de programación OOP favorito (en este caso, para JS)
 
 
-## Colecciones en REST vs Colecciones en Mongo
+### <a name='ColeccionesenRESTvsColeccionesenMongo'></a>Colecciones en REST vs Colecciones en Mongo
 
 > ⚠️ Colección de REST ≠ Colección de Mongo
 
@@ -229,16 +261,16 @@ Pero también hablamos (hoy)  de colecciones en Mongo:  es la estructura donde s
 **¡No!** El modelado rest y el modelado de base de datos, si bien evidentemente tienen vinculación, van por caminos diferente. El modelado de colecciones rest y de colecciones de base de datos no tiene por qué coincidir. Podemos tener colecciones Mongo que no se mapeen directamente a una ruta rest, ni viceversa.
 
 
-## Comandos de ejemplo
+### <a name='Comandosdeejemplo'></a>Comandos de ejemplo
 
-### Iniciar mediante docker
+#### <a name='Iniciarmediantedocker'></a>Iniciar mediante docker
 
 ```bash
 # esto no es necesario si lo instalaron nativamente
 docker run --rm -it --name mongo-kommanda -p 27017:27017 mongo
 ```
 
-### Conectarse al servidor de base de datos
+#### <a name='Conectarsealservidordebasededatos'></a>Conectarse al servidor de base de datos
 
 ```bash
 # si lo ejecutaste con docker
@@ -255,7 +287,7 @@ mongosh
 use komanda # dentro de mongosh
 ```
 
-### Acceso a bases de datos y colecciones
+#### <a name='Accesoabasesdedatosycolecciones'></a>Acceso a bases de datos y colecciones
 
 ```mongosh
 kommanda> show dbs
@@ -268,7 +300,7 @@ platos
 kommanda>
 ```
 
-### Consulta de colecciones
+#### <a name='Consultadecolecciones'></a>Consulta de colecciones
 
 ```js
 > db.platos.findOne()
@@ -328,7 +360,7 @@ kommanda>
 ]
 ```
 
-### Modificación de documentos
+#### <a name='Modificacindedocumentos'></a>Modificación de documentos
 
 ```js
 > db.platos.find({nombre: /dulce/}, { nombre: 1, precio: 1, _id: 0 })
@@ -365,7 +397,7 @@ kommanda>
 ]
 ```
 
-### Importación de datos
+#### <a name='Importacindedatos'></a>Importación de datos
 
 ```bash
 # nativo
@@ -388,6 +420,216 @@ docker exec -it mongo-kommanda mongoimport \
 docker run --rm -it -v "$(pwd)/tmp":/tmp/kommanda --name mongo-kommanda -p 27017:27017 mongo
 ```
 
+
+### <a name='ModeladoenMongoDB'></a>Modelado en MongoDB
+
+Tipos de datos:
+
+ - Los propios de JSON (string, number, boolean)
+ - Los primitivos de JS (todos los anteriores y además fechas y alguna que otra cosa mas)
+ - Los propios de BSON (todo lo anterior mas por ejemplo ObjectID ("_id"))
+
+Pero además tenemos soporte "excepcional" para atributos multivaluados:
+
+  - Podemos tener referencias y hacer joins como en el mundo relacional
+  - Y podemos embeber información (meter otros documentos o listas dentro de los documentos de mongo) <---- acá vamos a hacer foco
+      - Obviamente nos remite al concepto de desnormalización
+
+Ejemplo: modelamos Provincias, Ciudades y Paises
+
+Colecciones:
+
+  - Provincias
+  - Ciudades
+  - Paises
+
+
+```js
+// opcion normalizada (pseudocódigo mongo)
+// paises
+{
+  _id: 1
+  nombre: "Argentina",
+  independencia: 1816,
+  cantidadHabitantes: 40,
+  refCapital: 123456
+},
+{
+  _id: 2,
+  nombre: "Uruguay",
+  independencia: ....,
+  cantidadHabitantes: 3,
+  refCapital: 2345678,
+},
+
+// provincias
+{
+  nombre: "Jujuy",
+  ...
+  refPais:  1
+},
+{
+  nombre: "Catamarca",
+  ...,
+  refPais:  1
+}
+
+// ciudades
+{
+  _id: 123456
+  nombre: "Montevideo",
+  ....
+}
+{
+  _id: 2345678
+  nombre: "CABA",
+  ....
+}
+```
+
+
+```js
+// opcion denormalizada 1 (pseudocódigo mongo)
+// en la que embebemos documentos completos
+// paises
+{
+  _id: 1
+  nombre: "Argentina",
+  independencia: 1816,
+  cantidadHabitantes: 40,
+  capital: { // emebebo un documento
+    _id: 2345678
+    nombre: "CABA",
+    ....
+  },
+  // incluso podría ser mas extremo y emebeber a todas las provincias
+  // provincias: [ {  nombre: "Jujuy", ... } ]
+},
+{
+  _id: 2,
+  nombre: "Uruguay",
+  independencia: ....,
+  cantidadHabitantes: 3,
+  capital: {
+    _id: 123456
+    nombre: "Montevideo",
+    ....
+  }
+},
+
+// provincias
+{
+  nombre: "Jujuy",
+  ...
+  refPais:  1,
+  ciudades: [ // embebo varios documentos
+    {...} , {...}
+  ]
+},
+{
+  nombre: "Catamarca",
+  ...,
+  refPais:  1
+}
+```
+
+
+```js
+// opcion denormalizada 2 (pseudocódigo mongo)
+// en la que embebemos partes de documentos pero igualmente mantenemos a las colecciones
+// paises
+{
+  _id: 1
+  nombre: "Argentina",
+  independencia: 1816,
+  cantidadHabitantes: 40,
+  capital: { // emebebo solo el id y algunos datos que nos sean utiles
+    ref: 2345678
+    nombre: "CABA",
+  },
+  // guardamos de forma desnormalizada la información minima que necestamos
+  // dejando la informaccion "accesoria" en la colección indpendiente
+  provincias: [ {  nombre: "Jujuy", ref: ... } ] // emebebo solo el id y algunos datos que nos sean utiles
+},
+{
+  _id: 2,
+  nombre: "Uruguay",
+  independencia: ....,
+  cantidadHabitantes: 3,
+  capital: {
+    _id: 123456
+    nombre: "Montevideo",
+    ....
+  }
+},
+
+// provincias
+{
+  nombre: "Jujuy",
+  ...
+  refPais:  1,
+  ciudades: [ // embebo varios documentos
+    {...} , {...}
+  ]
+},
+{
+  nombre: "Catamarca",
+  ...,
+  refPais:  1
+}
+
+// provincias
+{
+  nombre: "Jujuy",
+  ...
+  refPais:  1,
+  capital: { ... },
+  cantidadDeHabitantes: ...,
+  ciudades: [ // embebo varios documentos
+    {...} , {...}
+  ]
+},
+{
+  nombre: "Catamarca",
+  ...,
+  refPais:  1
+}
+```
+
+
+En resumen:
+
+ - Podemos tener colecciones independientes y referencias (normalizado)
+ - Podemos emebeber la información completamente en otras colecciones (desnormalizado sin duplicación)
+ - Podemos emebeber parte de la información  completamente en otras colecciones, pero dejar la fuente principal de información en otra colección (desnormalizado con duplicación) -> ojo porque hay que mantener a esas duplicaciones consistentes
+
+### <a name='Gestionandoladesnormalizacin'></a>Gestionando la desnormalización
+
+```js
+class ServicioComanda {
+
+  // supongamos que tienen cantidad y plato
+  // estoy obviando temas de async / await y la resolución del plato a partir del precio
+  crearComanda({ items, responsable }) {
+    const itemsAPersistir = items.map(({
+      plato,
+      cantidad,
+      notasDelPedido
+     }) => new ItemComanda({
+        plato,
+        cantidad,
+        notasDelPedido,
+        precio: plato.precio // presten atención a esto
+     }))
+    const comanda = new Comanda({
+      responsable,
+      items: itemsAPersistir
+    })
+    repositorioComanda.insertar(comanda)|
+  }
+
+}
+```
 
 # Material
 
