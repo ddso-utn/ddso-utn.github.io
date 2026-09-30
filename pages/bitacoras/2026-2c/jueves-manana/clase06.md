@@ -7,7 +7,9 @@ permalink: /bitacoras/2026-2c/jueves-manana/clase-06/
 
 # Temeario
 
- * Reactividad. Variantes. Generalizacion.
+ * Reactividad. Variantes. Generalización.
+ * MVC. MVVM.
+ * Patrones de UI. Componentes. Conceptos
 
 # Resumen clase
 

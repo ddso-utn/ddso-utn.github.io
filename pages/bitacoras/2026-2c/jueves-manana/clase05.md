@@ -12,13 +12,31 @@ permalink: /bitacoras/2026-2c/jueves-manana/clase-05/
  * Vistas estáticas. Concepto de HTML. Concepto de CSS
  * Interactividad. Eventos. Callbacks
  * DOM
- * Patrones de UI. Componentes. Conceptos
- * Client side vs Server Side.
- * MVC. MVVM.
+
 
 # Resumen
 
-En esta clase conversamos sobre las siguientes cuestiones:
+## Primera parte
+
+En esta primera repasamos los conceptos de testing ya que fuimos adelantando en clases anteriores. Si bien en otras materias trabajamos los conceptos de pruebas unitarias (en el contexto de aplicaciones Web cliente pesado), acá trabajaremos más sobre pruebas de mayor nivel de abstracción. Refrescamos los distintos tipos:
+
+  1. Pruebas unitarias: pruebas una minima unidad lógica. Si bien esto cierra en la teoría, en la práctica tenemos algunas variantes
+      1. Pruebas que validan componentes muy simples y que no tienen mayores dependencias
+      2. Pruebas que validan componentes que tienen dependencias, pero que a su vez son simples y resulta más sencillo usar esas dependencias reales.
+      3. Pruebas que validan componentes que tienen dependencias, pero en las que por su complejidad, su dificultad de instanciación o configuración, porque aún no existen, porque dependden de sistemas externos, porque no son determinísticas o porque tienen un alto costo computacional, decidimos reemplazarlas por un _impostor_, frecuentemente conocidos como _mock_ o _stubs_ ([aunque no son exactamente lo mismo](https://martinfowler.com/articles/mocksArentStubs.html))
+  2. Pruebas de integración: pruebas en las que probamos componentes de alto nivel, con características similares a los del punto anterior `1.3`, pero en las que decidimos utilizar los componentes reales para tener una idea más realista de como se comportan las partes del sistema en conjunto. Suelen probar (de forma aislada o en combinación) la integración con:
+      1. Las interfaces HTTP
+      2. La base de datos
+      3. Algunos servicios externos
+  3. Pruebas de punta a punta (`e2e`), que pruebas la integración con (casi) todas las partes del sistema, usualmente desde la interfaz gráfica. Lo veremos más adelante.
+
+
+Como regla general, de cuanto más alto nivel de abstracción, más difícil de escribir y mantener el test es, más lento es, pero más realista es. A la vez, cuanto menor abstracción, más grano fino podremos tener en lo que se valida. Todo esto lleva a que una base de código "sana" tendrá de los tres tipos de tests, siendo usualmente los unitarios los más comunes.
+
+
+## Segunda parte
+
+En esta parte conversamos sobre las siguientes cuestiones:
 
 1. Cliente pesado vs cliente liviano. Repasamos qué lugar ocupan el Frontend y Backend en el contexto de cliente pesado.
 2. Analizamos distintas arquitecturas físicas para la construcción del frontend. Estudiamos algunos de los tipos más comunes de UIs en el contexto de las arquitecturas Web cliente pesado:
