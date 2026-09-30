@@ -38,11 +38,12 @@ Como regla general, de cuanto más alto nivel de abstracción, más difícil de 
 
 En esta parte conversamos sobre las siguientes cuestiones:
 
-1. Cliente pesado vs cliente liviano. Repasamos qué lugar ocupan el Frontend y Backend en el contexto de cliente pesado.
-2. Analizamos distintas arquitecturas físicas para la construcción del frontend. Estudiamos algunos de los tipos más comunes de UIs en el contexto de las arquitecturas Web cliente pesado:
+### Introducción a la Arquitectura de la UI
+
+1. Analizamos distintas arquitecturas físicas para la construcción del frontend. Estudiamos algunos de los tipos más comunes de UIs en el contexto de las arquitecturas Web cliente pesado:
     * Desktop (de escritorio) vs Web vs Móvil. Diferenciamos UIs de escritorio y móviles nativas vs basadas en navegadores embebidos y tecnologías web.
     * Comparamos los conceptos de aplicación web vs arquitectura Web
-3. Profundizamos sobre las aplicaciones (UIs) Web, que son aquellas que desarrollaremos en la materia.
+2. Profundizamos sobre las aplicaciones (UIs) Web, que son aquellas que desarrollaremos en la materia.
     * Estudiamos el significado de las interfaces adaptativas (responsive) y como a veces esto se utiliza (de forma mas o menos imprecisa) para diferenciarlas de las aplicaciones nativas.
     * Repasamos las tecnologías de la Web: el protocolo HTTP, los lenguajes HTML, CSS, JS, las tecnologías de [_local storage_](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/storage/local) y _session storage_ del navegador, [historial](https://developer.mozilla.org/en-US/docs/Web/API/History_API),  [CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/CORS), [DOM](https://developer.mozilla.org/en-US/docs/Glossary/DOM), [AJAX](https://developer.mozilla.org/en-US/docs/Glossary/AJAX) /[`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API), etc
     * Mencionamos las arquitecturas lógicas más comunes para estructurar al frontend:
@@ -53,17 +54,45 @@ En esta parte conversamos sobre las siguientes cuestiones:
         * React y Vue, que aplican arquitecturas reactivas
         * Angular 1.x, uno de los grandes frameworks que se utilizaron para construir clientes pasados, hoy ya obsoleto. Aplicaba ideas MVVM.
         * Backbone, un framework que fue muy popular durante los primeros años del 2010, que se basa en MVC.
-4. El navegador: mostramos sus herramientas (_dev tools_):
+
+### Presentación de HTML y el DOM
+
+Estudiamos qué es HTML y CSS y para qué sirve cada uno: estructura vs formato.
+
+En particular HTML (_HyperText Markup Language_) es el lenguaje estándar que los navegadores ofrecen para representar información en la Web. Ofrece una cantidad enorme de elementos diferentes, llamados etiquetadas (_tags_), con una estructura similar a la de XML pero más relajada: no todas las etiquetas se abren y cierran, por ejemplo. Algunas de las etiquetas mas frecuentes de ver son:
+
+
+- `<html>`: representa el elemento raíz de la página.
+- `<head>`: contiene metadatos y configuraciones, como el `<title>` o etiquetas para *open graph*.
+- `<body>`: define el cuerpo de la página, donde se colocan los elementos visibles: encabezados, párrafos, imágenes, enlaces, etc.
+- `<h1>` a `<h6>`: Títulos
+- `<p>`: Párrafos
+- `<strong>`, `<em>`, `<code>`: Modificadores semánticos del texto
+- `<div>`, `<span>`: Contenedores estructurales (sin semántica)
+- `<header>`, `<footer>`, `<nav>`, `<section>`, `<aside>`, `<article>`, `<quote>`: Contenedores semánticos
+- `<a>`: Vínculos
+- `<table>`: Tablas
+- `<form>`, `<input>`, `<button>`: Formularios
+- `<img>`, `<video>`: Elementos multimedia
+
+
+Además, mencionamos algunos de los problemas típicos que el frontend debe resolver:
+    * UI: _layout_ (disposición de componentes), colores, tipografias, tamaños, márgenes, bordes y rellenos (padding)
+    * Integración con el servidor
+    * Validaciones. Hicimos hincapié en que mientras las validaciones en el servidor son obligatorias y fundamentales para garantizar la seguridad y consistencia de los datos, en el cliente son opcionales y orientadas a mejorar la experiencia de les usuaries.
+
+Por último, mencionamos que el DOM es una estructura arbórea, programática y orientada a objetos que nos permite manipular al código HTML que está cargado en el navegador.
+
+
+### Presentación del navegador
+
+Mostramos sus herramientas (_dev tools_):
     * Redes (_Network_)
     * Inspector
     * Almacenamiento (_storage_)
     * Intérprete de JS (_console_)
-4. Estudiamos qué es HTML y CSS y para qué sirve cada uno: estructura vs formato. Presentamos algunos ejemplos
-5. Dentro del inspector, profundizamos en el uso del editor de CSS y HTML.
-6. Mencionamos algunos de los problemas típicos que el frontend debe resolver:
-    * UI: _layout_ (disposición de componentes), colores, tipografias, tamaños, márgenes, bordes y rellenos (padding)
-    * Integración con el servidor
-    * Validaciones. Hicimos hincapié en que mientras las validaciones en el servidor son obligatorias y fundamentales para garantizar la seguridad y consistencia de los datos, en el cliente son opcionales y orientadas a mejorar la experiencia de les usuaries.
+
+
 
 # Material
 
